@@ -9,6 +9,7 @@ Official regulations and reference documents for the Barking and District Pool L
 | [Full Regulations](regulations-full.md) | Complete official regulations for the 2026 season |
 | [Captain's Quick Start Guide](regulations-quickstart.md) | Essential information every captain needs to know |
 | [Fines & Disciplinary Guide](fines-guide.md) | Complete reference of all fines and penalties |
+| [2026 Season Schedule](schedule-2026.md) | Full fixture list and key dates |
 
 ## Quick Links
 
