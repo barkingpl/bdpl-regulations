@@ -210,7 +210,6 @@ The League season runs from **February to November** each year.
 - Team name
 - Venue details
 - Primary captain contact
-- Fixture night preference
 
 ### Eligibility
 - Teams must be based in or primarily represent venues in **Barking & Dagenham, Redbridge, or Havering**
@@ -488,7 +487,6 @@ The following are NOT permitted for players playing two singles:
 ✓ All player names  
 ✓ Frame results  
 ✓ Final score  
-✓ Both captain signatures  
 ✓ Date
 
 **Player Name Format:**
@@ -496,7 +494,7 @@ The following are NOT permitted for players playing two singles:
 - If two players with the same surname are on the same team, the first name must be fully provided for both (e.g., Dave Potalot and Steve Potalot)
 - This ensures clarity and avoids confusion when recording results and statistics
 
-**Both captains must sign** even if disputing result (see Part 6 - Grievances)
+**Both captains must sign** Unless disputing result and couldn't resolve it amicably on the night between the two captains. (see Part 6 - Grievances)
 
 ### Incorrectly Filled Scorecards
 
@@ -538,8 +536,8 @@ If a scorecard is submitted with players playing in incorrect frame positions (v
 
 **Captain Responsibility:**
 - Both captains are responsible for ensuring the scorecard is filled in correctly before signing
-- Signing an incorrectly completed scorecard does not waive the opposing team's right to report the error
-- Captains should verify player frame positions comply with the two-singles rule before signing
+- Signing an incorrectly completed scorecard waives that captains right to question the result after the match.
+- Captains should verify player frame positions comply with the two-singles rule before the matches commence and before signing the card.
 
 **Committee Review:**
 - The Committee will review all reported scorecard errors
@@ -621,6 +619,9 @@ If a scorecard is submitted with players playing in incorrect frame positions (v
 - A fixture can be played with a minimum of 5 players - rescheduling should not be used to gain a competitive advantage
 - The one reschedule allowance is to accommodate genuine unforeseen circumstances
 - Once a team has used their one reschedule, no further requests will be granted for any reason
+
+**Rescheduling Lock**
+Once any fixture between two teams has been rescheduled, no further fixtures between those same two teams can be rescheduled by either team until the original rescheduled fixture has been completed. This ensures both captains prioritize completing the rescheduled fixture."
 
 **If Team Requests a Second Reschedule:**
 - Request will be automatically denied
