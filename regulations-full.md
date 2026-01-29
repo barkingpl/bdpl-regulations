@@ -238,7 +238,12 @@ The League season runs from **February to November** each year.
 
 **Process:**
 - Replacement players complete full registration process
-- Become immediately eligible once registration processed and confirmed by Committee
+- Registration must be submitted via the **official Google Form on the League website** - this is the **only accepted method** for signing new players
+- Registration must be submitted by **20:00 the day before a fixture** for the player to be eligible for that match
+- The **timestamp recorded by the Google Form** will be used to confirm whether the signing was registered on time
+- Become eligible once registration processed and confirmed by Committee
+
+**Example:** For a Wednesday night fixture, the Google Form submission must be timestamped by 19:59 on Tuesday at the latest. Once the form is submitted the player is registered for play unless the comittee later states otherwise.
 
 ### Registration Status
 
