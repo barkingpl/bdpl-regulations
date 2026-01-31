@@ -127,6 +127,7 @@ The League season runs from **February to November** each year.
 ## 2.3 Match Points & League Standings
 
 ### Points Allocation
+
 | Result | Points |
 |--------|--------|
 | Win | 2 points |
@@ -1518,19 +1519,3 @@ All competitions require: registered player, 4+ league matches played, entry fee
 *These regulations are issued by the BDPL Committee and take effect from February 2026.*
 
 ---
-
-## WORD FORMATTING INSTRUCTIONS
-
-**After pasting into Word, apply these formats:**
-
-1. **Cover Page:** Insert → Cover Page → "Austin"
-2. **Theme:** Design → Themes → "Facet"
-3. **Fonts:** 
-   - Body: Calibri 11pt
-   - Headings: Calibri Bold (sizes 16pt, 14pt, 12pt for H1, H2, H3)
-4. **Colors:** Use theme colors (purple/blue accent)
-5. **Tables:** Table Design → "Grid Table 5 Dark - Accent 1"
-6. **Icons:** Replace checkmarks and symbols with Word icons (Insert → Icons)
-7. **Page Breaks:** Insert between major Parts
-8. **Table of Contents:** References → Table of Contents → Automatic
-9. **Header/Footer:** Add page numbers and "BDPL 2026 Regulations"
