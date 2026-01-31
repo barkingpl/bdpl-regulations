@@ -168,6 +168,13 @@ The League season runs from **February to November** each year.
 - **Committee will NOT remind captains** to submit walkover cards
 - It is the **captain's sole responsibility** to ensure card submission
 
+**Food Compensation:**
+- If the home venue has prepared food for the visiting team and the away team cancels **on the day of the match**, the **non-attending team must pay £10 compensation** to the home venue
+- This compensation is intended to cover costs **already incurred** by the venue in preparing food
+- Venues that typically order food in (and can cancel the order) should not claim this compensation if no costs have been incurred — in keeping with the spirit of the game and the friendly nature of the League
+- This is in addition to any other fines for failing to fulfill the fixture
+- Compensation to be arranged directly with the venue or via the Committee
+
 **Rationale for Frame Difference Adjustment:**
 - Prevents excessive frame difference advantage from opponent no-shows/cancellations
 - Maintains competitive balance in league standings
@@ -193,6 +200,16 @@ The League season runs from **February to November** each year.
 - All frames played under **UK Blackball Rules**
 - Official rules: https://eba.leagueapplive.com/pdfs/BB%20Rules.pdf
 - In event of contradiction between UK Blackball Rules and BDPL Regulations, **BDPL Regulations take precedence**
+
+### Stalemate Rule
+If **five consecutive shots per player** (10 shots total) are played without a legal ball being potted, the frame is declared a **stalemate**.
+
+**Procedure:**
+- Frame is re-racked
+- The player who broke in the original frame breaks again
+- Shot count resets for both players after any legal pot
+
+**Note:** This rule supplements UK Blackball Rules to prevent excessively defensive play and ensure frames reach a conclusion within reasonable time.
 
 ---
 
@@ -650,6 +667,22 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Ensures competitive fairness for all teams
 
 ## 4.7 Venues & Equipment Standards
+
+### Pre-Match Practice
+
+**The home team must make the match table available to the away team for practice.**
+
+**Timing:**
+- Table should be handed over to the away team at **20:20**
+- Away team has use of the table until **20:30** (10 minutes practice time)
+
+**Minimum Requirement:**
+- If circumstances prevent the full 10-minute practice period, the home team must allow the away team a **minimum of one practice frame** on the match table
+
+**Cost:**
+- Practice is provided **at the expense of the home team** (home team pays for table time during the practice period)
+
+**Note:** This ensures away teams have reasonable opportunity to acclimatise to table conditions before match play begins.
 
 ### Minimum Equipment Requirements
 
@@ -1387,6 +1420,8 @@ Grievances may concern:
 | Fewer than 5 players signed by deadlines | £10 | Frame(s) forfeited per Section 4.2 |
 | Not ready to start by 20:45 | £10 | First two frames forfeited |
 | Not ready to start by 21:00 | £10 | Entire match awarded to opponents (10-0) |
+| Walkover/no-show (failing to fulfill fixture) | £10 | 0-10 loss, -10 frame difference |
+| Food compensation (same-day cancellation when venue incurred costs) | £10 | Payable to venue |
 | Breach of signing-in or doubles declaration rules | £10 | Affected frame(s) awarded to opponents |
 | Incorrect frame positions on scorecard | £10 | Both frames of affected player awarded to opponents |
 | More than 2 players play two singles | £10 | Extra players' frames awarded to opponents |
