@@ -1,0 +1,6 @@
+title: BDPL Regulations
+description: Official regulations for the Barking and District Pool League
+
+markdown: kramdown
+kramdown:
+  input: GFM
