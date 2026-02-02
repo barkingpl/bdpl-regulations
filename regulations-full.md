@@ -127,7 +127,6 @@ The League season runs from **February to November** each year.
 ## 2.3 Match Points & League Standings
 
 ### Points Allocation
-
 | Result | Points |
 |--------|--------|
 | Win | 2 points |
@@ -168,13 +167,6 @@ The League season runs from **February to November** each year.
 - **Committee will NOT remind captains** to submit walkover cards
 - It is the **captain's sole responsibility** to ensure card submission
 
-**Food Compensation:**
-- If the home venue has prepared food for the visiting team and the away team cancels **on the day of the match**, the **non-attending team must pay £10 compensation** to the home venue
-- This compensation is intended to cover costs **already incurred** by the venue in preparing food
-- Venues that typically order food in (and can cancel the order) should not claim this compensation if no costs have been incurred — in keeping with the spirit of the game and the friendly nature of the League
-- This is in addition to any other fines for failing to fulfill the fixture
-- Compensation to be arranged directly with the venue or via the Committee
-
 **Rationale for Frame Difference Adjustment:**
 - Prevents excessive frame difference advantage from opponent no-shows/cancellations
 - Maintains competitive balance in league standings
@@ -200,16 +192,6 @@ The League season runs from **February to November** each year.
 - All frames played under **UK Blackball Rules**
 - Official rules: https://eba.leagueapplive.com/pdfs/BB%20Rules.pdf
 - In event of contradiction between UK Blackball Rules and BDPL Regulations, **BDPL Regulations take precedence**
-
-### Stalemate Rule
-If **five consecutive shots per player** (10 shots total) are played without a legal ball being potted, the frame is declared a **stalemate**.
-
-**Procedure:**
-- Frame is re-racked
-- The player who broke in the original frame breaks again
-- Shot count resets for both players after any legal pot
-
-**Note:** This rule supplements UK Blackball Rules to prevent excessively defensive play and ensure frames reach a conclusion within reasonable time.
 
 ---
 
@@ -256,12 +238,7 @@ If **five consecutive shots per player** (10 shots total) are played without a l
 
 **Process:**
 - Replacement players complete full registration process
-- Registration must be submitted via the **official Google Form on the League website** - this is the **only accepted method** for signing new players
-- Registration must be submitted by **20:00 the day before a fixture** for the player to be eligible for that match
-- The **timestamp recorded by the Google Form** will be used to confirm whether the signing was registered on time
-- Become eligible once registration processed and confirmed by Committee
-
-**Example:** For a Wednesday night fixture, the Google Form submission must be timestamped by 19:59 on Tuesday at the latest. Once the form is submitted the player is registered for play unless the comittee later states otherwise.
+- Become immediately eligible once registration processed and confirmed by Committee
 
 ### Registration Status
 
@@ -667,22 +644,6 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Ensures competitive fairness for all teams
 
 ## 4.7 Venues & Equipment Standards
-
-### Pre-Match Practice
-
-**The home team must make the match table available to the away team for practice.**
-
-**Timing:**
-- Table should be handed over to the away team at **20:20**
-- Away team has use of the table until **20:30** (10 minutes practice time)
-
-**Minimum Requirement:**
-- If circumstances prevent the full 10-minute practice period, the home team must allow the away team a **minimum of one practice frame** on the match table
-
-**Cost:**
-- Practice is provided **at the expense of the home team** (home team pays for table time during the practice period)
-
-**Note:** This ensures away teams have reasonable opportunity to acclimatise to table conditions before match play begins.
 
 ### Minimum Equipment Requirements
 
@@ -1233,6 +1194,35 @@ To enter any League competition, a player must:
 - Committee maintains a log of all returnable trophies and current holders
 - Log published on League website and updated after each season
 
+## 5.13 Finals & Presentation Night
+
+### Schedule
+
+1. The Committee will publish the Finals Night schedule in advance, setting out the order and approximate timing of all finals and presentations.
+
+2. **The schedule is final and will not be altered on the night.**
+
+3. Matches will be called in the published order. Players must be ready to play when their match is called.
+
+### Players in Multiple Finals
+
+4. Players who qualify for multiple finals accept that back-to-back or overlapping matches may occur. This is a consequence of success, not grounds for complaint.
+
+5. Where a player is competing in multiple finals and a scheduling clash occurs:
+   - The player must **pause** their current match and play their frame in the other competition
+   - Once that frame is complete, they return immediately to resume the paused match
+   - **No additional rest or warm-up time will be granted** between matches
+
+6. Opponents and partners in a paused match are expected to wait. This is an unavoidable consequence of Finals Night scheduling.
+
+### Forfeiture
+
+7. If a player is not present and ready within **5 minutes** of their match being called, and is not actively engaged in another final, the match is forfeited to their opponent.
+
+### Complaints
+
+8. **Requests to alter the published schedule will not be considered on the night.** Any concerns must be raised with the Committee before Finals Night.
+
 ---
 
 # PART 6 — GRIEVANCES & DISPUTES
@@ -1420,8 +1410,6 @@ Grievances may concern:
 | Fewer than 5 players signed by deadlines | £10 | Frame(s) forfeited per Section 4.2 |
 | Not ready to start by 20:45 | £10 | First two frames forfeited |
 | Not ready to start by 21:00 | £10 | Entire match awarded to opponents (10-0) |
-| Walkover/no-show (failing to fulfill fixture) | £10 | 0-10 loss, -10 frame difference |
-| Food compensation (same-day cancellation when venue incurred costs) | £10 | Payable to venue |
 | Breach of signing-in or doubles declaration rules | £10 | Affected frame(s) awarded to opponents |
 | Incorrect frame positions on scorecard | £10 | Both frames of affected player awarded to opponents |
 | More than 2 players play two singles | £10 | Extra players' frames awarded to opponents |
@@ -1552,5 +1540,3 @@ All competitions require: registered player, 4+ league matches played, entry fee
 **END OF REGULATIONS**
 
 *These regulations are issued by the BDPL Committee and take effect from February 2026.*
-
----
