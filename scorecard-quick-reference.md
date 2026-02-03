@@ -74,8 +74,8 @@ If a player wants break and dish or reverse dish tracked, mark the Win column wi
 - **S1-S4:** Four different players play the first four singles
 - **P1-P2:** Doubles pairs must be declared before the first doubles frame begins
 - **S5-S8:** Four players play the last four singles
-- **S7 and S8:** Must be played by two players from S1-S4 (their second singles frame)
-- **Two singles rule:** Players who play two singles frames (S1-S4 and again in S7-S8) **cannot** also play doubles
+- **Two singles option:** A captain may give up to two players a second singles frame. If so, these players must play their first singles in S1-S4 and their second in S7 or S8
+- **Restriction:** Players who play two singles frames **cannot** also play doubles
 
 ### Five Players Only
 
@@ -136,8 +136,8 @@ The example scorecard shows:
 - Players 1-4 play S1-S4 (first singles)
 - Players 5 & 6 play P1
 - Players 1 & 2 play P2 (one singles + one doubles each = 2 frames)
-- Players 5 & 6 play S5 & S6 (their second frame, one singles + one doubles each)
-- Players 3 & 4 play S7 & S8 (their second singles, so they couldn't play doubles)
+- Players 5 & 6 play S5 & S6 (one singles + one doubles each = 2 frames)
+- Players 3 & 4 play S7 & S8 (captain chose to give them a second singles, so they couldn't play doubles)
 
 **Away Team (Team B)** - Only 5 players available:
 - Starts 2-0 down
