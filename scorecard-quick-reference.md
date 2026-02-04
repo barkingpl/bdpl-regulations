@@ -52,6 +52,19 @@ The league uses a **4-2-4 format**:
 - Each player signs in the Signature column next to their name
 - Players must be signed in by the deadline to be eligible to play
 
+### What Must Be Filled In By Deadline
+
+By 20:20 (home) / 20:25 (away), the scorecard must have:
+- Minimum 5 players signed in
+- **S1-S4** fully populated with player names
+- **P1** fully populated (both players in your pair named)
+
+### Remaining Frames
+
+- **P2, S5, S6, S7, S8** may be filled in frame by frame as the match progresses
+- Players must sign the card before starting their frame
+- Additional players (6-12) may arrive during the match and play, provided they sign the card before starting their frame
+
 ---
 
 ## Filling In the Scorecard
@@ -152,6 +165,7 @@ The example scorecard shows:
 
 | Action | Deadline |
 |--------|----------|
+| New player registration | Midnight (23:59) Tuesday |
 | Players at venue | 20:15 |
 | Home team signed in | 20:20 |
 | Away team signed in | 20:25 |
