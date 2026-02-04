@@ -237,8 +237,12 @@ The League season runs from **February to November** each year.
 **Example:** A team starts with 8 players, registers player 9, removes one player (leaving 8 active), then registers player 10. They have now used 10 of their 12 free registrations, leaving 2 free registrations remaining.
 
 **Process:**
-- Replacement players complete full registration process
-- Become immediately eligible once registration processed and confirmed by Committee
+- Replacement players must be entered into the New Player Registration form on the League website
+- The form records the date and time of submission – this is the official record of when the player was registered
+- Registration must be submitted by **midnight (23:59) on Tuesday** for the player to be eligible for the Wednesday fixture
+- Players registered after this deadline are not eligible until the following week's fixture
+
+**Example:** A captain submits a new player registration at 00:15 on Wednesday. The player is not eligible for that night's fixture – they must wait until the following Wednesday.
 
 ### Registration Status
 
@@ -261,7 +265,7 @@ The League season runs from **February to November** each year.
 
 ### Match Eligibility
 Players must meet ALL of these criteria:
-✓ Registered to their team before being named on match sheet  
+✓ Registered to their team by midnight Tuesday (see Section 3.2)  
 ✓ Not under suspension  
 ✓ No unpaid fines exceeding £30 or outstanding for more than 14 days
 
@@ -409,7 +413,7 @@ The following are NOT permitted for players playing two singles:
 | Time | Requirement | Penalty if Missed |
 |------|-------------|-------------------|
 | **20:15** | Both teams: minimum 5 players physically present at venue | £10 + frame forfeit |
-| **20:20** | **HOME** captain: minimum 5 signed in; S1-S4 populated; one doubles slot filled | £10 + frame forfeit |
+| **20:20** | **HOME** captain: minimum 5 signed in; S1-S4 and P1 populated | £10 + frame forfeit |
 | **20:25** | **AWAY** captain: same requirements as home team | £10 + frame forfeit |
 | **20:30** | Match must start | - |
 | **20:45** | Last chance or forfeit 2 frames | £10 + S1 & S2 forfeited |
@@ -421,8 +425,13 @@ The following are NOT permitted for players playing two singles:
 ✓ Minimum 5 players signed in on match sheet  
 ✓ All signed players physically present  
 ✓ S1-S4 fully populated with player names  
-✓ At least one doubles slot (P1 or P2) filled to show intention  
+✓ P1 (first doubles) fully populated (both players in your pair named)  
 ✓ **Pre-signing absent players strictly prohibited**
+
+**Remaining Frames (P2, S5, S6, S7, S8):**
+- May be populated frame by frame as the match progresses
+- Players must sign the card before starting their frame
+- Additional players (6-12) may arrive during the match and play, provided they sign the card before starting their frame
 
 ### Doubles Declaration
 
@@ -1486,6 +1495,7 @@ Grievances may concern:
 
 | **Action** | **Deadline** |
 |------------|--------------|
+| New player registration | Midnight (23:59) Tuesday |
 | Players present at venue | 20:15 |
 | Home team signed in (minimum 5) | 20:20 |
 | Away team signed in (minimum 5) | 20:25 |
