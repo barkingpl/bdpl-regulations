@@ -505,6 +505,34 @@ The following are NOT permitted for players playing two singles:
 
 **Both captains must sign** Unless disputing result and couldn't resolve it amicably on the night between the two captains. (see Part 6 - Grievances)
 
+### Captain Signature Requirements
+
+**Purpose of Signing:**
+- By signing the scorecard, a captain confirms the result is accurate and accepted
+- Signing waives the right to dispute the match result later (except for conduct issues)
+
+**Refusing to Sign:**
+- Refusing to sign the scorecard implies the captain is disputing the result
+- A captain who refuses to sign is expected to raise a grievance by midnight the following day
+- The opposing captain should still sign and submit the scorecard as normal
+
+**Failure to Sign Without Raising a Grievance:**
+
+Captains who refuse to sign the scorecard but then fail to raise a grievance delay result processing and create unnecessary administrative burden. The following escalating penalties apply:
+
+| Offence | Penalty |
+|---------|---------|
+| 1st offence | Warning |
+| 2nd offence | £10 fine |
+| 3rd offence | £10 fine + 1 league point deduction |
+| 4th+ offence | Committee discretion (may include suspension) |
+
+**Note:** Offences are tracked against the **team**, not the individual captain. Changing who acts as captain does not reset the count.
+
+**Alternative Signatory:**
+- If the captain is not present at the end of the match, any other signed-in registered player from that team may sign the scorecard on behalf of the captain
+- This does not remove the captain's overall responsibility for their team's conduct and administration
+
 ### Incorrectly Filled Scorecards
 
 **Scorecard Errors - Player Frame Positions**
@@ -1424,6 +1452,10 @@ Grievances may concern:
 | More than 2 players play two singles | £10 | Extra players' frames awarded to opponents |
 | Missing signatures (first time) | Warning | Must resubmit with signatures |
 | Missing signatures (repeat) | £5 | Must resubmit with signatures |
+| Captain not signing without raising grievance (1st) | Warning | None |
+| Captain not signing without raising grievance (2nd) | £10 | None |
+| Captain not signing without raising grievance (3rd) | £10 | 1 league point deduction |
+| Captain not signing without raising grievance (4th+) | Committee discretion | May include suspension |
 | Missing frame results | £5 | Must resubmit complete |
 | Completely illegible scorecard | £5 | Must resubmit legible version |
 | Failure to submit result sheet by 15:00 next day | £5 | None (unless deadline missed again) |
