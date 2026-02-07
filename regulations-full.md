@@ -493,6 +493,7 @@ The following are NOT permitted for players playing two singles:
 ### Completion Requirements
 
 **Official result sheets must include:**
+
 ✓ All player names  
 ✓ Frame results  
 ✓ Final score  
