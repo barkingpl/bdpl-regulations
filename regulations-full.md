@@ -496,6 +496,7 @@ The following are NOT permitted for players playing two singles:
 ✓ All player names  
 ✓ Frame results  
 ✓ Final score  
+✓ Both captain signatures  
 ✓ Date
 
 **Player Name Format:**
@@ -864,7 +865,7 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Frame awarded to opponents
 - £10 fine to team providing that referee
 
-### Between Frames ✓
+### Between Frames
 
 **Reasonable phone use permitted between frames**
 
