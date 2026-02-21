@@ -217,32 +217,64 @@ The League season runs from **February to November** each year.
 
 ## 3.2 Player Registration
 
-### Initial Registration
-**Each player must provide:**
-- Full name
-- Signature
-- Phone number
-- Email address
+### Start of Season Registration
 
-**Important Rules:**
-- Players must be **present to sign** registration forms
-- Pre-signing is **not permitted**
-- Forms submitted by deadline set by Committee (typically 2 weeks before season start)
+**Registration Window:**
+- The Committee will define a registration window before each season (typically opening 3 weeks before and closing 7 days before the first fixture)
+- Dates will be communicated via official channels
 
-### Player Replacement
+**Process:**
+- Captains log into the League website and register their team and players
+- Captains may register any player who played for **their team** the previous season
+- The system will **block** registration of players who played for a **different team** the previous season (this is a transfer – see below)
+- New players (not registered with any team the previous season) must be added via the New Player Registration form on the website
+
+**Deadline:**
+- All registrations must be completed before the registration window closes
+- Players not registered by this deadline cannot play until registered via the mid-season process
+
+### New Player Registration (Mid-Season)
+
+**For players not previously registered with any BDPL team:**
+
+**Process:**
+- New players must be entered into the New Player Registration form on the League website
+- The form records the date and time of submission – this is the official record of when the player was registered
+- Registration must be submitted by **midnight (23:59) on Tuesday** for the player to be eligible for the Wednesday fixture
+- Players registered after this deadline are not eligible until the following week's fixture
+
+**Example:** A captain submits a new player registration at 00:15 on Wednesday. The player is not eligible for that night's fixture – they must wait until the following Wednesday.
+
 **Permitted Until:** Three-quarters through the season
 
 **Fee:** Amount set annually by Committee and communicated via official channels, currently £2.50 per player. Each team is entitled to register up to 12 players at no additional cost beyond the annual team fee. This is based on the total number of players registered to the team throughout the season, not the current active roster size. Once a team has registered 12 players in total (regardless of any removals), any subsequent registrations will be subject to the £2.50 charge per player.
 
 **Example:** A team starts with 8 players, registers player 9, removes one player (leaving 8 active), then registers player 10. They have now used 10 of their 12 free registrations, leaving 2 free registrations remaining.
 
-**Process:**
-- Replacement players must be entered into the New Player Registration form on the League website
-- The form records the date and time of submission – this is the official record of when the player was registered
-- Registration must be submitted by **midnight (23:59) on Tuesday** for the player to be eligible for the Wednesday fixture
-- Players registered after this deadline are not eligible until the following week's fixture
+### Transfers
 
-**Example:** A captain submits a new player registration at 00:15 on Wednesday. The player is not eligible for that night's fixture – they must wait until the following Wednesday.
+**Definition:** A transfer occurs when a player who was registered with one team the previous season wishes to register with a different team.
+
+**Transfer requests must be initiated by the player:**
+- The **player themselves** must contact the Committee directly to request a transfer
+- Requests made by captains on behalf of players will **not** be accepted
+- This ensures the player genuinely wishes to move and prevents disputes between captains
+
+**Process:**
+1. Player contacts Committee to request transfer
+2. Committee verifies the request is genuine
+3. Committee processes the transfer (updates system to allow new team to register the player)
+4. New team's captain registers the player via the website
+
+**Timing:**
+- Transfer requests must be submitted at least **10 days before the first fixture** to allow processing before the registration window closes
+- Mid-season transfers are **not permitted** except in exceptional circumstances at Committee discretion
+
+**Vexatious Transfer Requests:**
+- If a player requests a transfer and then fails to follow through (e.g., does not register with the new team, returns to their original team, or was never genuinely intending to transfer), this is considered a vexatious request
+- Vexatious transfer requests waste Committee time and cause unnecessary disruption
+- **Penalty:** £10 fine to the player + written warning
+- **Repeat offence:** £25 fine + potential suspension at Committee discretion
 
 ### Registration Status
 
@@ -341,8 +373,8 @@ Players must meet ALL of these criteria:
 - Captains may select any combination of registered players who are present and eligible
 - There is **no requirement** to play all players who are in attendance
 - Players who attend but are not selected do not need to be named on the match sheet
-- Players who attend but are not named on the match sheet do **not** receive Player of the Year attendance points
-- Only players who are signed in on the match sheet receive attendance points
+- Players who attend but do not play a frame do **not** receive Player of the Year points
+- Only players who play at least one frame receive POY attendance points
 - Captains' selection decisions are final and not subject to challenge or grievance providing they are within the regulations
 - Players must respect the captain's selection decisions
 
@@ -1019,9 +1051,27 @@ To enter any League competition, a player must:
 - Must have played in over 40% of league fixtures
 
 **Scoring System**
-- 1 point for attending a league match (must be signed in on result sheet)
-- +2 points for winning first frame played that night (S1-S8 only)
-- Maximum 3 points per match night
+
+**Attendance Point (1 point):**
+- Awarded for being signed in on the match sheet **and** playing at least one frame
+- Simply attending the venue without playing does **not** earn an attendance point
+
+**Win Points (2 points):**
+- Awarded for winning your **qualifying frame** (see below)
+- Maximum 3 points per match night (1 attendance + 2 win)
+
+**Qualifying Frame for Win Points:**
+- If you play any **singles** frame: your **first singles frame** is your qualifying frame
+- If you **only** play doubles (no singles): your doubles frame is your qualifying frame
+- Singles always takes priority over doubles for POY purposes
+
+**Examples:**
+- Player plays S3 and wins → 3 points (1 attendance + 2 win)
+- Player plays S3 and loses → 1 point (attendance only)
+- Player plays P1 only and wins → 3 points (1 attendance + 2 win)
+- Player plays P1 only and loses → 1 point (attendance only)
+- Player plays P2 then S7, wins P2 but loses S7 → 1 point (S7 is qualifying frame, not P2)
+- Player plays P2 then S7, loses P2 but wins S7 → 3 points (S7 is qualifying frame)
 
 **Team-Level Tiebreak**
 - If two or more players from same team finish level on points, the team/captain decides who progresses
@@ -1446,6 +1496,8 @@ Grievances may concern:
 | Playing unregistered player | £10 per player | All frames involving player awarded to opponents |
 | Playing suspended player | £50 | All frames involving player awarded to opponents; potential further sanctions |
 | Playing for second team while registered elsewhere | £50 | Player suspended; potential expulsion |
+| Vexatious transfer request (1st offence) | £10 | Written warning |
+| Vexatious transfer request (repeat) | £25 | Potential suspension at Committee discretion |
 | Fewer than 5 players signed by deadlines | £10 | Frame(s) forfeited per Section 4.2 |
 | Not ready to start by 20:45 | £10 | First two frames forfeited |
 | Not ready to start by 21:00 | £10 | Entire match awarded to opponents (10-0) |
@@ -1529,7 +1581,9 @@ Grievances may concern:
 
 | **Action** | **Deadline** |
 |------------|--------------|
-| New player registration | Midnight (23:59) Tuesday |
+| Transfer request (pre-season) | 10 days before first fixture |
+| Start of season registration window closes | 7 days before first fixture |
+| New player registration (mid-season) | Midnight (23:59) Tuesday |
 | Players present at venue | 20:15 |
 | Home team signed in (minimum 5) | 20:20 |
 | Away team signed in (minimum 5) | 20:25 |
