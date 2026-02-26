@@ -1024,6 +1024,29 @@ To enter any League competition, a player must:
 - All matches follow standard league format: 4 singles, 2 doubles, 4 singles (10 frames)
 - Signing-in and team sheet rules identical to league matches (see Section 4.1 and 4.2)
 
+### 5.3(a) Split Scorecard Procedure
+
+To ensure fairness and prevent tactical matchmaking based on knowledge of the opposition's lineup, all team cup matches (Darren Henshaw KO Shield, Premier Division Cup, and Division 1 Cup) use a split scorecard procedure for completing the lineup.
+
+**Procedure:**
+1. Before the match, the scorecard is split or folded down the centre so that each team's half is concealed from the other
+2. Both captains complete their team's S1–S4 and P1 positions on their respective halves simultaneously, ensuring neither can see the other's lineup
+3. Once both captains have completed their half, the card is brought together and both lineups are revealed at the same time
+4. The standard signing-in deadlines from Section 4.2 still apply: minimum 5 players signed in for the home team by 20:20, away team by 20:25
+
+**Key Rules:**
+- Neither captain may view the opponent's lineup before completing their own
+- Any deliberate attempt to view the opponent's lineup before completing your own is a breach of this rule and the spirit of the game (Section 4.9)
+
+**Penalty for Breach:**
+
+Where a captain views the opposition's lineup before completing their own, the Committee may at its discretion:
+- Award any or all of the affected frames (S1–S4, P1) to the opposing team
+- Issue a £10 fine to the offending team
+- Take further action under Section 4.8 (Conduct) if the breach is considered deliberate
+
+**Note:** The split scorecard procedure applies throughout the entire match. For remaining frames (P2, S5–S8), both teams must either complete their respective selections simultaneously without sight of the opponent's choice, or declare their player for each frame on a frame-by-frame basis. At no point should either captain be able to select a player in response to knowing who the opposition has already nominated.
+
 **Draw**
 - Conducted by a Committee member, witnessed by at least one other Committee or League member
 - Published via official channels
@@ -1258,7 +1281,77 @@ To enter any League competition, a player must:
 
 **Note:** Competition format subject to change at Committee discretion based on entries and time constraints.
 
-## 5.12 Returnable Trophies
+## 5.12 Premier Division Cup
+
+**Eligibility**
+- Open to all registered teams competing in the Premier Division in the current season
+- Player eligibility requires the player to be currently registered, not under suspension, and with no unpaid fines exceeding £30
+- The 4+ league matches played requirement applies only for eligibility to participate in the final
+
+**Format**
+- Knockout competition
+- All matches follow the standard league format: 4 singles, 2 doubles, 4 singles (10 frames total)
+- Signing-in and team sheet rules are identical to league matches (see Sections 4.1 and 4.2)
+- The split scorecard procedure applies to all matches in this competition (see Section 5.3(a))
+
+**Tie-Breaker**
+- If a match finishes 5–5, ONE additional sudden-death frame is played
+- Any signed-in player is eligible for this frame, even if they have already played two singles frames
+- The winner of this frame wins the match
+- The Committee may amend this format if circumstances require
+
+**Draw**
+- Conducted by a Committee member, witnessed by at least one other Committee or League member
+- Published via official channels
+- First-drawn team plays at home wherever practical
+
+**Finals**
+- The final is played at a neutral venue on Finals & Presentation Night
+- Both teams must follow all standard match regulations
+
+**Trophies**
+- Winners: returnable perpetual trophy (retained for 1 year) + individual trophies for each team member
+- Runners-up: individual trophies for each team member
+- Returnable trophy conditions apply as per Section 5.14 (Returnable Trophies)
+
+**Note:** Competition format subject to change at Committee discretion based on entries, venue availability, or time constraints.
+
+## 5.13 Division 1 Cup
+
+**Eligibility**
+- Open to all registered teams competing in Division 1 in the current season
+- Player eligibility requires the player to be currently registered, not under suspension, and with no unpaid fines exceeding £30
+- The 4+ league matches played requirement applies only for eligibility to participate in the final
+
+**Format**
+- Knockout competition
+- All matches follow the standard league format: 4 singles, 2 doubles, 4 singles (10 frames total)
+- Signing-in and team sheet rules are identical to league matches (see Sections 4.1 and 4.2)
+- The split scorecard procedure applies to all matches in this competition (see Section 5.3(a))
+
+**Tie-Breaker**
+- If a match finishes 5–5, ONE additional sudden-death frame is played
+- Any signed-in player is eligible for this frame, even if they have already played two singles frames
+- The winner of this frame wins the match
+- The Committee may amend this format if circumstances require
+
+**Draw**
+- Conducted by a Committee member, witnessed by at least one other Committee or League member
+- Published via official channels
+- First-drawn team plays at home wherever practical
+
+**Finals**
+- The final is played at a neutral venue on Finals & Presentation Night
+- Both teams must follow all standard match regulations
+
+**Trophies**
+- Winners: returnable perpetual trophy (retained for 1 year) + individual trophies for each team member
+- Runners-up: individual trophies for each team member
+- Returnable trophy conditions apply as per Section 5.14 (Returnable Trophies)
+
+**Note:** Competition format subject to change at Committee discretion based on entries, venue availability, or time constraints.
+
+## 5.14 Returnable Trophies
 
 **Responsibility**
 - Individuals, pairs, and teams receiving returnable perpetual trophies are responsible for their safekeeping
@@ -1283,7 +1376,7 @@ To enter any League competition, a player must:
 - Committee maintains a log of all returnable trophies and current holders
 - Log published on League website and updated after each season
 
-## 5.13 Finals & Presentation Night
+## 5.15 Finals & Presentation Night
 
 ### Schedule
 
@@ -1622,6 +1715,8 @@ Grievances may concern:
 | **Competition** | **Min. Entries** | **Final Format** | **Eligibility Notes** |
 |-----------------|------------------|------------------|-----------------------|
 | Darren Henshaw Shield | N/A (all teams) | Full match (10 frames) | Full team entries |
+| Premier Division Cup | N/A (Premier teams) | Full match (10 frames) | Premier Division teams only |
+| Division 1 Cup | N/A (Div 1 teams) | Full match (10 frames) | Division 1 teams only |
 | Alan Pointer Trophy | N/A (one per team) | Race to 4 (best of 7) | Top points scorer from each team |
 | Jeff Fuller Singles | 8 | Race to 4 (best of 7) | Open to all registered players |
 | Henry Thorpe Pairs | 8 | Race to 4 (best of 7) | Partners from same team |
