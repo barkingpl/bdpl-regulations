@@ -875,13 +875,9 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 
 ## 4.10 Mobile Phones
 
-### During Frames ❌
+### Referee Restrictions
 
-**Players and referees must NOT use mobile phones during frames in which they are directly involved**
-
-**"Directly involved" means:**
-- Actively playing
-- Actively refereeing
+**Referees must NOT use mobile phones during frames they are refereeing**
 
 **Prohibited activities include:**
 - Calls
@@ -890,27 +886,16 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Games
 - Any other phone use
 
-### Referee Attention
-
-**Referees must give full attention to frame they are refereeing**
+**Referees must give full attention to the frame they are refereeing**
 
 **Failure results in:**
 - Frame awarded to opponents
 - £10 fine to team providing that referee
 
-### Between Frames
-
-**Reasonable phone use permitted between frames**
-
-**However:**
-- Must not delay the match
-- Persistent delays may result in frame forfeiture
-
 ### Penalties
 
 | Violation | Sanction |
 |-----------|----------|
-| Player uses phone during own frame | Frame forfeited |
 | Referee uses phone during frame | Frame awarded to opponents + £10 fine |
 
 ## 4.11 Official Communication Channels
@@ -1611,7 +1596,6 @@ Grievances may concern:
 | Referee using phone / not paying attention | £10 | Frame awarded to opponents |
 | No usable cue rest provided | £10 | None (per occurrence) |
 | HOME team fails to provide official scorecard | £10 | Per occurrence; can submit on paper |
-| Player using phone during their own frame | £0 | Frame forfeited |
 | Non-attendance at AGM/EGM without notice | £10 per team | None |
 | Non-attendance at 1st delegates meeting | £25 per team | None |
 | Non-attendance at 2nd delegates meeting | £25 per team | 1 league point deduction (cumulative: £50 + 1 point if also missed 1st) |
@@ -1650,7 +1634,7 @@ Grievances may concern:
 
 ### Frame Forfeiture
 - Individual frames awarded to opponents
-- Applied for: ineligible players, referee failures, signing-in breaches, phone use during frames, incorrect frame positions
+- Applied for: ineligible players, referee failures, signing-in breaches, referee phone use, incorrect frame positions
 
 ### Result Voiding
 - Match result removed from records entirely
@@ -1707,7 +1691,6 @@ Grievances may concern:
 | Breach of signing-in rules | Affected frame(s) |
 | Failure to provide referee | That frame |
 | Referee not paying attention | That frame |
-| Player uses phone during frame | That frame |
 | Injury to doubles player | That doubles frame |
 
 ## Appendix C: Competition Entry Requirements Summary
