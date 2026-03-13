@@ -14,10 +14,10 @@
 | 18/03/2026 | Divisional Cup - Quarter Finals | |
 | 25/03/2026 | Week 6 | |
 | 01/04/2026 | Week 7 | |
-| 08/04/2026 | Henry Thorpe Pairs - Round 1 | 40% match attendance required |
+| 08/04/2026 | Henry Thorpe Pairs - Round 1 | 4 match attendance required |
 | 15/04/2026 | Week 8 | |
 | 22/04/2026 | Week 9 | |
-| 29/04/2026 | Jeff Fuller Singles - Round 1 | 40% match attendance required |
+| 29/04/2026 | Jeff Fuller Singles - Round 1 | 4 match attendance required |
 | 06/05/2026 | Week 10 | |
 | 13/05/2026 | Week 11 | |
 | 20/05/2026 | Darren Henshaw - Last 16 | |
@@ -42,7 +42,7 @@
 | 16/09/2026 | Darren Henshaw - Semi Finals | |
 | 23/09/2026 | Week 22 | |
 | 30/09/2026 | Week 23 | |
-| 07/10/2026 | Ladies & Over 50's Cups | 40% match attendance required |
+| 07/10/2026 | Ladies & Over 50's Cups | 4 match attendance required |
 | 14/10/2026 | Week 24 | |
 | 21/10/2026 | Week 25 | |
 | 28/10/2026 | Week 26 | |
@@ -63,7 +63,7 @@
 
 ### Competition Eligibility Reminder
 
-Competitions marked "40% match attendance required" need players to have completed 40% of available league matches to enter.
+Competitions marked "4 match attendance required" need players to have played in at least 4 league matches to enter.
 
 ---
 
