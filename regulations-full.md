@@ -977,6 +977,16 @@ To enter any League competition, a player must:
 4. Not be under suspension
 5. Not have unpaid fines exceeding £30
 
+**Captain Attendance Exemption — Competition Eligibility**
+
+The requirement to have played in a minimum number of league or cup matches (as defined by the appearance column on the Player of the Year table) to qualify for competitions does not apply to the registered captain of a team.
+
+- This exemption applies to the appearance requirement only
+- All other eligibility criteria set out in Section 5.1 apply to captains in the same way as any other player, including being currently registered, not under suspension, and having no unpaid fines exceeding £30
+- Entry fees must still be paid by the published deadline
+
+**Note:** Where a captain also plays frames regularly and appears on the Player of the Year table, the standard appearance count applies and this exemption is not required.
+
 **Entry Fees**
 - Entry fees are set annually by the Committee
 - Must be paid by the published deadline
