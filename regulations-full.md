@@ -276,6 +276,25 @@ The League season runs from **February to November** each year.
 - **Penalty:** £10 fine to the player + written warning
 - **Repeat offence:** £25 fine + potential suspension at Committee discretion
 
+### Re-Registration of Removed Players
+
+**Player Removal Process:**
+- Player removals will only be processed when submitted via the Player Removal Form on the League website
+- Requests made via WhatsApp, email, or any other channel will not be actioned
+- The form timestamp will serve as the official record of the removal request, consistent with the registration process
+
+**Re-Registration Counting:**
+
+If a player is removed from a team's roster and subsequently re-registered to the same team, the re-registration counts as a new registration against that team's cumulative total for the season.
+
+- The original registration and the re-registration are counted separately
+- The cumulative total is never reduced by removals
+- Removals affect the active roster only, not the registration count
+
+**Example:** A team has registered 12 players in total and removes one player. If that same player is later re-registered, this counts as a 13th registration and incurs a £2.50 charge. If that player is removed and re-registered a second time, this counts as a 14th registration and incurs a further £2.50 charge. Each re-registration of the same player is a separate registration for the purposes of this rule.
+
+**Note:** Captains are advised that removing a player from the active roster is only necessary when creating space to register a new player beyond the 12-player limit. Players who are temporarily unavailable do not need to be removed — they simply will not be selected for matches during that period. Unnecessary removals and re-registrations serve no administrative purpose and will consume free registration slots or incur charges where the threshold has already been reached.
+
 ### Registration Status
 
 **A player remains registered unless:**
