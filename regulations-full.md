@@ -680,7 +680,7 @@ If a scorecard is submitted with players playing in incorrect frame positions (v
 
 ### Referee Conduct
 ✓ Must give full attention to the frame  
-✓ **Mobile phone use prohibited** (see Section 4.10)  
+✓ **Mobile phone use prohibited** (see Section 4.11)  
 ✓ Must enforce rules fairly and consistently  
 ✓ Referee's decision is **final on the night**, subject to grievance process
 
@@ -794,7 +794,24 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Committee makes alternative arrangements
 - **Failure to provide adequate notice:** May result in fines and match forfeiture
 
-## 4.8 Conduct & Behaviour
+## 4.8 Food Provision
+
+### Home Team Requirement
+
+For all home league matches, the home team is required to provide food for both teams on match night.
+
+- Food provision for cup matches is at the discretion of the home team
+- Failure to provide food for a league match will result in a **£10 fine** per occurrence
+
+### Compensation for No-Shows
+
+If a team fails to fulfil a fixture and the home team had prepared food in advance, the home team may claim **£10 in compensation** from the non-attending team.
+
+- This sum will be collected by the Committee on the home team's behalf
+- The claim must be raised at the time the no-show is reported to the Committee
+- This £10 compensation is separate from and in addition to the standard penalties applied to the non-attending team under Section 2.3
+
+## 4.9 Conduct & Behaviour
 
 ### Expected Standards
 
@@ -848,7 +865,7 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Disputes should not escalate to arguments or aggressive behaviour
 - Referee's decision stands on the night; grievances addressed afterwards
 
-## 4.9 Spirit of the Game & Committee Interpretation
+## 4.10 Spirit of the Game & Committee Interpretation
 
 ### Fundamental Principle
 
@@ -892,7 +909,7 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 - Emergency circumstances require it
 - Spirit of game is being violated
 
-## 4.10 Mobile Phones
+## 4.11 Mobile Phones
 
 ### Referee Restrictions
 
@@ -917,7 +934,7 @@ Once any fixture between two teams has been rescheduled, no further fixtures bet
 |-----------|----------|
 | Referee uses phone during frame | Frame awarded to opponents + £10 fine |
 
-## 4.11 Official Communication Channels
+## 4.12 Official Communication Channels
 
 ### Purpose
 
@@ -1050,14 +1067,14 @@ To ensure fairness and prevent tactical matchmaking based on knowledge of the op
 
 **Key Rules:**
 - Neither captain may view the opponent's lineup before completing their own
-- Any deliberate attempt to view the opponent's lineup before completing your own is a breach of this rule and the spirit of the game (Section 4.9)
+- Any deliberate attempt to view the opponent's lineup before completing your own is a breach of this rule and the spirit of the game (Section 4.10)
 
 **Penalty for Breach:**
 
 Where a captain views the opposition's lineup before completing their own, the Committee may at its discretion:
 - Award any or all of the affected frames (S1–S4, P1) to the opposing team
 - Issue a £10 fine to the offending team
-- Take further action under Section 4.8 (Conduct) if the breach is considered deliberate
+- Take further action under Section 4.9 (Conduct) if the breach is considered deliberate
 
 **Note:** The split scorecard procedure applies throughout the entire match. For remaining frames (P2, S5–S8), both teams must either complete their respective selections simultaneously without sight of the opponent's choice, or declare their player for each frame on a frame-by-frame basis. At no point should either captain be able to select a player in response to knowing who the opposition has already nominated.
 
@@ -1625,6 +1642,7 @@ Grievances may concern:
 | Referee using phone / not paying attention | £10 | Frame awarded to opponents |
 | No usable cue rest provided | £10 | None (per occurrence) |
 | HOME team fails to provide official scorecard | £10 | Per occurrence; can submit on paper |
+| HOME team fails to provide food for league match | £10 | None (per occurrence) |
 | Non-attendance at AGM/EGM without notice | £10 per team | None |
 | Non-attendance at 1st delegates meeting | £25 per team | None |
 | Non-attendance at 2nd delegates meeting | £25 per team | 1 league point deduction (cumulative: £50 + 1 point if also missed 1st) |
