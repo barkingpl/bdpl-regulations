@@ -188,9 +188,8 @@ td.td-s{text-align:center;vertical-align:middle;color:#aaa;font-size:13px;white-
   </div>
 </div>
 
-<!-- SHEETS (screen + print) -->
-<div id="sheets-screen" class="app screen sheets-area" style="display:none;"></div>
-<div id="sheets-print" style="display:none;"></div>
+<!-- SHEETS -->
+<div id="sheets-screen" class="app sheets-area" style="display:none;"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -565,15 +564,11 @@ function renderStats() {
 
 function renderDraw() {
   const screenEl = document.getElementById('sheets-screen');
-  const printEl = document.getElementById('sheets-print');
   if (!currentDraw) { screenEl.style.display = 'none'; return; }
-
   const html = currentDraw.map(v => sheetHtml(v)).join('');
   screenEl.innerHTML = html;
-  printEl.innerHTML = html;
   screenEl.style.display = 'block';
   screenEl.scrollIntoView({ behavior: 'smooth' });
-
   updateDrawBtns();
 }
 
