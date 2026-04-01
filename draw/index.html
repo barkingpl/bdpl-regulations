@@ -14,36 +14,30 @@ body{font-family:Arial,Helvetica,sans-serif;background:#eef0f4;color:#111;font-s
 .app-hdr .lg{font-size:11px;font-weight:700;letter-spacing:2px;color:#0d2b45;text-transform:uppercase;}
 .app-hdr h1{font-size:22px;font-weight:700;color:#0d2b45;}
 .app-hdr p{font-size:12px;color:#666;margin-top:2px;}
-
 .card{background:white;border-radius:8px;border:1px solid #ddd;margin-bottom:18px;overflow:hidden;}
 .card.off{opacity:.4;pointer-events:none;}
 .ch{background:#0d2b45;color:white;padding:12px 18px;display:flex;align-items:center;gap:10px;}
 .ch h2{font-size:13px;font-weight:700;}
 .sn{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
 .cb{padding:18px;}
-
 .drop{border:2px dashed #ccc;border-radius:6px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color .15s;}
 .drop:hover,.drop.on{border-color:#0d2b45;background:#f0f4f8;}
 .drop svg{color:#0d2b45;margin-bottom:8px;}
 .drop .dt{font-size:14px;font-weight:700;color:#0d2b45;}
 .drop .ds{font-size:12px;color:#888;margin-top:4px;}
 input[type=file]{display:none;}
-
 .or{display:flex;align-items:center;gap:12px;margin:14px 0;}
 .or::before,.or::after{content:'';flex:1;height:1px;background:#e0e0e0;}
 .or span{font-size:11px;color:#aaa;}
 .url-r{display:flex;gap:8px;}
 .url-r input{flex:1;padding:8px 10px;border:1px solid #ccc;border-radius:5px;font-size:12px;font-family:inherit;}
-
 .fr{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
 .fg{display:flex;flex-direction:column;gap:4px;flex:1;min-width:160px;}
 .fg label{font-size:11px;color:#555;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
 .fg input,.fg select{padding:8px 10px;border:1px solid #ccc;border-radius:5px;font-size:13px;font-family:inherit;}
-
 .btn{padding:9px 18px;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;color:white;display:inline-flex;align-items:center;gap:6px;}
 .bg{background:#27ae60;}.bb{background:#2980b9;}.bp{background:#8e44ad;}.br{background:#c0392b;}.bd{background:#0d2b45;}
 .bgrp{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-
 .ibar{background:#f0f4f8;border-radius:6px;padding:10px 14px;font-size:12px;color:#555;display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
 .ibar strong{color:#0d2b45;}
 .vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:14px;}
@@ -68,49 +62,88 @@ input[type=file]{display:none;}
 }
 
 /* header */
-.ph{text-align:center;margin-bottom:14px;}
-.ph .lg2{font-size:9px;font-weight:700;letter-spacing:2px;color:#444;text-transform:uppercase;}
-.ph .cn{font-size:15px;font-weight:700;color:#0d2b45;margin:3px 0;}
-.ph .vn{font-size:20px;font-weight:700;color:#c0392b;margin:2px 0;}
-.ph .dm{font-size:11px;color:#444;margin-top:3px;}
-.ph .bdg{display:inline-block;background:#0d2b45;color:white;font-size:9px;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:6px;}
-.ph .og{font-size:10px;color:#666;margin-top:4px;}
-.ph hr{border:none;border-top:2px solid #0d2b45;margin:8px 0 0;}
+.ph{text-align:center;margin-bottom:16px;}
+.ph .lg2{font-size:9px;font-weight:700;letter-spacing:2px;color:#666;text-transform:uppercase;}
+.ph .cn{font-size:16px;font-weight:700;color:#0d2b45;margin:3px 0 2px;}
+.ph .vn{font-size:22px;font-weight:700;color:#c0392b;margin:2px 0 4px;}
+.ph .dm{font-size:11px;color:#444;margin-bottom:4px;}
+.ph .bdg{display:inline-block;background:#0d2b45;color:white;font-size:9px;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:6px;vertical-align:middle;}
+.ph .og{font-size:10px;color:#777;}
+.ph-rule{border:none;border-top:3px solid #0d2b45;margin:10px 0 0;}
 
-/* round section */
-.rb{margin-bottom:14px;}
-.rl{text-align:center;font-size:12px;color:#444;padding:5px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;background:#f9f9f9;margin-bottom:0;}
+/* round sections */
+.rb{margin-bottom:0;}
+
+.rl{
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:white;
+  background:#2c3e6b;
+  padding:6px 0;
+}
+.rl.final{background:#a93226;}
 
 /* draw table */
-table.dt{width:100%;border-collapse:collapse;border-left:1px solid #bbb;border-right:1px solid #bbb;border-bottom:1px solid #bbb;}
-table.dt thead tr{background:#2c3e6b;}
-table.dt thead th{color:white;font-size:11px;font-weight:700;padding:7px 8px;text-align:center;border:1px solid #3d5280;}
-th.thm{width:40px;}
-th.ths{width:80px;}
+table.dt{width:100%;border-collapse:collapse;}
+table.dt thead tr{background:#3d5280;}
+table.dt thead th{
+  color:white;
+  font-size:11px;
+  font-weight:400;
+  padding:6px 10px;
+  text-align:center;
+  border:1px solid #4a6099;
+}
+th.thm{width:44px;}
+th.ths{width:82px;}
+th.thh{text-align:right;}
+th.tha{text-align:left;}
 
-table.dt tbody td{border:1px solid #d0d0d0;vertical-align:middle;}
-td.tdm{width:40px;text-align:center;font-size:13px;font-weight:700;color:#2c3e6b;padding:0;vertical-align:middle;}
-td.tdh{text-align:center;padding:0;}
-td.tda{text-align:center;padding:0;}
-td.tds{width:80px;text-align:center;padding:0;vertical-align:middle;}
+table.dt tbody td{border:1px solid #d8d8d8;vertical-align:middle;padding:0;}
 
-/* name blocks inside cells */
-.nb{padding:7px 12px;display:block;min-height:20px;}
-.nb.top{border-bottom:1px solid #e8e8e8;}
-.nb.mid{border-bottom:1px solid #e8e8e8;}
-.nb.bot{padding:4px 12px;}
-.pn{font-size:12px;font-weight:700;color:#111;display:block;text-align:center;}
-.tn{font-size:9px;color:#999;display:block;text-align:center;margin-top:1px;}
-.bye{font-size:12px;color:#555;display:block;text-align:center;}
-.wph{font-size:10px;color:#c0392b;display:block;text-align:center;line-height:1.6;}
-.wbl{display:block;border-bottom:1px solid #ccc;min-height:18px;margin:5px 20px 3px;}
+td.tdm{
+  width:44px;
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+  color:#2c3e6b;
+  background:#f0f2f8;
+  vertical-align:middle;
+  padding:4px;
+}
+td.tdh{text-align:right;}
+td.tda{text-align:left;}
+td.tds{width:82px;text-align:center;vertical-align:middle;padding:0;}
 
-/* score block */
-.sc{display:flex;align-items:center;justify-content:center;min-height:100%;padding:6px 4px;font-size:17px;font-weight:700;color:#333;}
-.sc.bye-sc{font-size:15px;color:#333;}
+/* name rows */
+.nr{display:block;padding:8px 14px;min-height:28px;}
+.nr.top{border-bottom:1px solid #ebebeb;}
+.nr.mid{border-bottom:1px solid #ebebeb;}
+.nr.bot{padding:3px 14px;min-height:0;background:#fafafa;border-top:1px solid #ebebeb;}
+.pn{font-size:13px;font-weight:700;color:#111;}
+.bye{font-size:12px;color:#888;font-style:italic;}
+.wph{font-size:10px;color:#c0392b;font-style:italic;}
+.wbl{display:block;border-bottom:1px solid #bbb;min-height:18px;margin:4px 0 2px;}
+.wlbl{font-size:9px;color:#c0392b;font-style:italic;display:block;text-align:center;padding:3px 8px;min-height:18px;border-bottom:1px solid #e8e8e8;background:#fff8f8;}
+
+/* score */
+.sc{
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;color:#0d2b45;
+  padding:6px 4px;
+  min-height:28px;
+}
+.sc.bye-sc{color:#0d2b45;}
+.sc.empty{color:transparent;} /* blank — just holds space */
+
+/* spacer row between rounds */
+.spacer td{height:10px;background:#f4f5f8;border:none;}
 
 /* footer */
-.pf{margin-top:12px;border-top:1px solid #ddd;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#999;}
+.pf{margin-top:14px;border-top:1px solid #ddd;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#999;}
 
 /* PRINT */
 @media print{
@@ -194,7 +227,6 @@ td.tds{width:80px;text-align:center;padding:0;vertical-align:middle;}
 <script>
 let ents=[], cfg={}, draw=null, locked=false, isPairs=false;
 
-// ---- UPLOAD ----
 const dz=document.getElementById('dz'), fi=document.getElementById('fi');
 dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('on');});
 dz.addEventListener('dragleave',()=>dz.classList.remove('on'));
@@ -240,17 +272,8 @@ function showPreview(){
   const orgs=ents.filter(e=>e.organiser);
   const venues=[...new Set(orgs.map(e=>e.venue))];
   const bs=nextP2(ents.length/Math.max(venues.length,1))*venues.length;
-  document.getElementById('us').innerHTML=`
-    <span>Entrants: <strong>${ents.length}</strong></span>
-    <span>Format: <strong>${isPairs?'Pairs':'Singles'}</strong></span>
-    <span>Venues: <strong>${venues.length}</strong></span>
-    <span>Draw size: <strong>${bs}</strong> (${bs-ents.length} byes)</span>`;
-  document.getElementById('pb').innerHTML=ents.map(e=>`<tr style="border-bottom:1px solid #eee;">
-    <td style="padding:4px 8px;">${e.name}</td>
-    <td style="padding:4px 8px;">${e.team}</td>
-    <td style="padding:4px 8px;text-align:center;">${e.organiser?'✅':''}</td>
-    <td style="padding:4px 8px;">${e.venue||''}</td>
-  </tr>`).join('');
+  document.getElementById('us').innerHTML=`<span>Entrants: <strong>${ents.length}</strong></span><span>Format: <strong>${isPairs?'Pairs':'Singles'}</strong></span><span>Venues: <strong>${venues.length}</strong></span><span>Draw size: <strong>${bs}</strong> (${bs-ents.length} byes)</span>`;
+  document.getElementById('pb').innerHTML=ents.map(e=>`<tr style="border-bottom:1px solid #eee;"><td style="padding:4px 8px;">${e.name}</td><td style="padding:4px 8px;">${e.team}</td><td style="padding:4px 8px;text-align:center;">${e.organiser?'✅':''}</td><td style="padding:4px 8px;">${e.venue||''}</td></tr>`).join('');
   document.getElementById('up').style.display='block';
 }
 
@@ -282,7 +305,6 @@ function fmtDate(iso){
   return d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 }
 
-// ---- DRAW ALGORITHM ----
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function nextP2(n){n=Math.ceil(n);let p=1;while(p<n)p*=2;return p;}
 
@@ -294,18 +316,14 @@ function genDraw(){
   const base=Math.floor(ents.length/nv), extra=ents.length%nv;
   const maxPV=base+(extra>0?1:0);
   const bracket=nextP2(maxPV);
-
-  // Build venue buckets
   const vm={};
   venues.forEach((v,i)=>{
     const org=orgs.find(e=>e.venue===v);
     vm[v]={name:v,org:org?org.name:'',players:org?[{...org}]:[],cap:i<extra?base+1:base,bracket};
   });
-  // Seeded non-org players
   ents.filter(e=>!e.organiser&&e.venue).forEach(p=>{
     if(vm[p.venue]){vm[p.venue].players.push({...p});vm[p.venue].cap--;}
   });
-  // Random pool
   const pool=shuffle(ents.filter(e=>!e.organiser&&!e.venue));
   for(const p of pool){
     const avail=venues.filter(v=>vm[v].cap>0);
@@ -317,7 +335,6 @@ function genDraw(){
     }
     if(best){vm[best].players.push({...p});vm[best].cap--;}
   }
-
   draw=venues.map(v=>buildBracket(vm[v]));
   renderDraw();
   renderStats();
@@ -327,16 +344,10 @@ function buildBracket(venue){
   const {players,bracket}=venue;
   const nByes=bracket-players.length;
   const pl=shuffle(players);
-
-  // Place players and byes — spread byes evenly in odd (away) slots
   const slots=new Array(bracket).fill(null);
   const byeSlots=pickByeSlots(bracket,nByes);
   let pi=0;
-  for(let i=0;i<bracket;i++){
-    slots[i]=byeSlots.has(i)?{isBye:true}:{...pl[pi++]};
-  }
-
-  // Separate same-team R1 matchups
+  for(let i=0;i<bracket;i++) slots[i]=byeSlots.has(i)?{isBye:true}:{...pl[pi++]};
   for(let iter=0;iter<80;iter++){
     let sw=false;
     outer:for(let i=0;i<bracket;i+=2){
@@ -345,28 +356,24 @@ function buildBracket(venue){
       if(a.team&&b.team&&a.team===b.team){
         for(let k=0;k<bracket;k++){
           if(slots[k].isBye)continue;
-          const km=Math.floor(k/2),im=Math.floor(i/2);
-          if(km!==im&&slots[k].team!==a.team){[slots[i+1],slots[k]]=[slots[k],slots[i+1]];sw=true;break outer;}
+          if(Math.floor(k/2)!==Math.floor(i/2)&&slots[k].team!==a.team){[slots[i+1],slots[k]]=[slots[k],slots[i+1]];sw=true;break outer;}
         }
       }
     }
     if(!sw)break;
   }
-
   const rounds=buildRounds(bracket);
   const winners=calcByeWinners(rounds,slots);
   const r1c=rounds[0].filter(m=>{
     const h=slots[m.hi],a=slots[m.ai];
     return h&&a&&!h.isBye&&!a.isBye&&h.team&&a.team&&h.team===a.team;
   }).length;
-
   return{...venue,slots,rounds,winners,r1Clashes:r1c};
 }
 
 function pickByeSlots(size,n){
   const s=new Set();
   if(!n)return s;
-  // Prefer to put byes in away (odd) positions, spread evenly
   const step=size/n;
   for(let i=0;i<n;i++){
     let p=Math.round(i*step)+1;
@@ -385,9 +392,8 @@ function buildRounds(size){
   rounds.push([...cur]);
   while(cur.length>1){
     const prev=cur;cur=[];
-    for(let i=0;i<prev.length/2;i++){
+    for(let i=0;i<prev.length/2;i++)
       cur.push({id:mid++,hi:null,ai:null,hm:prev[i].id,am:prev[prev.length-1-i].id});
-    }
     rounds.push([...cur]);
   }
   return rounds;
@@ -397,7 +403,7 @@ function calcByeWinners(rounds,slots){
   const w={};
   for(const round of rounds){
     for(const m of round){
-      const h=getP(m,true,slots,w), a=getP(m,false,slots,w);
+      const h=getP(m,true,slots,w),a=getP(m,false,slots,w);
       if(h&&h.isBye&&a&&!a.isBye)w[m.id]=a;
       else if(a&&a.isBye&&h&&!h.isBye)w[m.id]=h;
     }
@@ -415,14 +421,12 @@ function getP(m,isHome,slots,w){
   }
 }
 
-// ---- RENDER UI ----
 function renderStats(){
   const el=document.getElementById('ds');
   el.style.display='flex';
   if(!draw)return;
   const c=draw.reduce((s,v)=>s+v.r1Clashes,0);
-  el.innerHTML=`<span>Same-team R1 matchups: <span class="${c===0?'cok':'cwarn'}">${c}${c===0?' ✅':' — try redrawing'}</span></span>
-    <span>${locked?'<span class="lok">🔒 Locked</span>':'Redraw until happy, then lock'}</span>`;
+  el.innerHTML=`<span>Same-team R1 matchups: <span class="${c===0?'cok':'cwarn'}">${c}${c===0?' ✅':' — try redrawing'}</span></span><span>${locked?'<span class="lok">🔒 Locked</span>':'Redraw until happy, then lock'}</span>`;
 }
 
 function renderDraw(){
@@ -457,15 +461,19 @@ function sheetHtml(v){
   const rt=cfg.raceTo||2;
   const best=rt*2-1;
   const lbls=roundLabels(rounds.length);
-  const thead=`<thead><tr><th class="thm">Match</th><th>Home</th><th class="ths">Race To ${rt}</th><th>Away</th></tr></thead>`;
-
-  const blocks=rounds.map((round,ri)=>{
-    const rows=round.map(m=>matchHtml(m,slots,winners)).join('');
-    return`<div class="rb"><div class="rl">${lbls[ri]}</div><table class="dt">${thead}<tbody>${rows}</tbody></table></div>`;
-  }).join('');
-
+  const thead=`<thead><tr><th class="thm">Match</th><th class="thh">Home</th><th class="ths">Race To ${rt}</th><th class="tha">Away</th></tr></thead>`;
   const np=v.players.length, nb=v.slots.length-np;
   const unit=cfg.format==='Pairs'?'pairs':'players';
+
+  const blocks=rounds.map((round,ri)=>{
+    const isFinal=ri===rounds.length-1;
+    const rows=round.map(m=>matchHtml(m,slots,winners)).join('');
+    return`<div class="rb">
+      <div class="rl${isFinal?' final':''}">${lbls[ri]}</div>
+      <table class="dt">${thead}<tbody>${rows}</tbody></table>
+    </div>`;
+  }).join('<table style="width:100%;border-collapse:collapse;"><tr class="spacer"><td colspan="4"></td></tr></table>');
+
   return`<div class="page">
     <div class="ph">
       <div class="lg2">Barking &amp; District Pool League</div>
@@ -473,7 +481,7 @@ function sheetHtml(v){
       <div class="vn">${esc(name)}</div>
       <div class="dm">${esc(cfg.date)}<span class="bdg">Race to ${rt} · Best of ${best}</span></div>
       <div class="og">Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; ${np} ${unit} &nbsp;·&nbsp; ${nb} bye${nb!==1?'s':''}</div>
-      <hr>
+      <hr class="ph-rule">
     </div>
     ${blocks}
     <div class="pf">
@@ -487,37 +495,29 @@ function matchHtml(m,slots,winners){
   const h=getP(m,true,slots,winners);
   const a=getP(m,false,slots,winners);
   const isBye=(h&&h.isBye)||(a&&a.isBye);
-  if(isBye){
-    const real=(h&&!h.isBye)?h:a;
-    return byeRows(m.id,real);
-  }
+  if(isBye){const real=(h&&!h.isBye)?h:a;return byeRows(m.id,real);}
   return liveRows(m,h,a);
 }
 
 function byeRows(mid,real){
   if(isPairs){
     const p=real?real.players||[real.name,'']:['',''];
-    const tm=real?esc(real.team||''):'';
     return`<tr>
-      <td class="tdm" rowspan="3">${mid}</td>
-      <td class="tdh"><span class="nb top"><span class="pn">${esc(p[0])}</span></span></td>
-      <td class="tds" rowspan="3"><div class="sc bye-sc">2 &ndash; 0</div></td>
-      <td class="tda"><span class="nb top"><span class="bye">Bye</span></span></td>
+      <td class="tdm" rowspan="2">${mid}</td>
+      <td class="tdh"><span class="nr top"><span class="pn">${esc(p[0])}</span></span></td>
+      <td class="tds" rowspan="2"><div class="sc bye-sc">2 – 0</div></td>
+      <td class="tda"><span class="nr top"><span class="bye">Bye</span></span></td>
     </tr><tr>
-      <td class="tdh"><span class="nb mid"><span class="pn">${esc(p[1]||'')}</span></span></td>
-      <td class="tda"><span class="nb mid"></span></td>
-    </tr><tr>
-      <td class="tdh"><span class="nb bot"><span class="tn">${tm}</span></span></td>
-      <td class="tda"><span class="nb bot"></span></td>
+      <td class="tdh"><span class="nr mid"><span class="pn">${esc(p[1]||'')}</span></span></td>
+      <td class="tda"><span class="nr mid"></span></td>
     </tr>`;
   } else {
     const nm=real?esc(real.name||real.players[0]):'';
-    const tm=real?esc(real.team||''):'';
     return`<tr>
       <td class="tdm">${mid}</td>
-      <td class="tdh"><span class="nb"><span class="pn">${nm}</span><span class="tn">${tm}</span></span></td>
-      <td class="tds"><div class="sc bye-sc">2 &ndash; 0</div></td>
-      <td class="tda"><span class="nb"><span class="bye">Bye</span></span></td>
+      <td class="tdh"><span class="nr"><span class="pn">${nm}</span></span></td>
+      <td class="tds"><div class="sc bye-sc">2 – 0</div></td>
+      <td class="tda"><span class="nr"><span class="bye">Bye</span></span></td>
     </tr>`;
   }
 }
@@ -530,35 +530,71 @@ function liveRows(m,h,a){
   if(isPairs){
     const hp=kh?(h.players||[h.name,'']):[null,null];
     const ap=ka?(a.players||[a.name,'']):[null,null];
-    const hm=kh?esc(h.hm||h.team||''):''; // fallthrough
-    const ht=kh?esc(h.team||''):'';
-    const at=ka?esc(a.team||''):'';
 
-    const h1=kh?`<span class="pn">${esc(hp[0])}</span>`:`<span class="wph">${phTxt(m,true)}</span>`;
-    const h2=kh?`<span class="pn">${esc(hp[1]||'')}</span>`:`<span class="wbl"></span>`;
-    const a1=ka?`<span class="pn">${esc(ap[0])}${ct}</span>`:`<span class="wph">${phTxt(m,false)}</span>`;
-    const a2=ka?`<span class="pn">${esc(ap[1]||'')}</span>`:`<span class="wbl"></span>`;
+    // Known names shown directly; unknown gets a label row + 2 blank write-in lines
+    const hLabelRow=!kh?`<tr><td class="tdh"><span class="nr wlbl">${phTxt(m,true)}</span></td><td class="tda"><span class="nr wlbl">${phTxt(m,false)}</span></td></tr>`:'';
+    const aLabelRow=''; // handled together above for pairs
 
+    if(!kh||!ka){
+      // At least one side unknown — show label row + 2 blank rows
+      const hLabel=!kh?phTxt(m,true):'';
+      const aLabel=!ka?phTxt(m,false):'';
+      const h1=kh?`<span class="pn">${esc(hp[0])}</span>`:`<span class="wbl"></span>`;
+      const h2=kh?`<span class="pn">${esc(hp[1]||'')}</span>`:`<span class="wbl"></span>`;
+      const a1=ka?`<span class="pn">${esc(ap[0])}${ct}</span>`:`<span class="wbl"></span>`;
+      const a2=ka?`<span class="pn">${esc(ap[1]||'')}</span>`:`<span class="wbl"></span>`;
+      return`<tr>
+        <td class="tdm" rowspan="3">${m.id}</td>
+        <td class="tdh"><span class="nr wlbl">${hLabel}</span></td>
+        <td class="tds" rowspan="3"><div class="sc"></div></td>
+        <td class="tda"><span class="nr wlbl">${aLabel}</span></td>
+      </tr><tr>
+        <td class="tdh"><span class="nr top">${h1}</span></td>
+        <td class="tda"><span class="nr top">${a1}</span></td>
+      </tr><tr>
+        <td class="tdh"><span class="nr mid">${h2}</span></td>
+        <td class="tda"><span class="nr mid">${a2}</span></td>
+      </tr>`;
+    }
+
+    // Both known
+    const h1=`<span class="pn">${esc(hp[0])}</span>`;
+    const h2=`<span class="pn">${esc(hp[1]||'')}</span>`;
+    const a1=`<span class="pn">${esc(ap[0])}${ct}</span>`;
+    const a2=`<span class="pn">${esc(ap[1]||'')}</span>`;
     return`<tr>
-      <td class="tdm" rowspan="3">${m.id}</td>
-      <td class="tdh"><span class="nb top">${h1}</span></td>
-      <td class="tds" rowspan="3"><div class="sc">___ &ndash; ___</div></td>
-      <td class="tda"><span class="nb top">${a1}</span></td>
+      <td class="tdm" rowspan="2">${m.id}</td>
+      <td class="tdh"><span class="nr top">${h1}</span></td>
+      <td class="tds" rowspan="2"><div class="sc"></div></td>
+      <td class="tda"><span class="nr top">${a1}</span></td>
     </tr><tr>
-      <td class="tdh"><span class="nb mid">${h2}</span></td>
-      <td class="tda"><span class="nb mid">${a2}</span></td>
-    </tr><tr>
-      <td class="tdh"><span class="nb bot"><span class="tn">${ht}</span></span></td>
-      <td class="tda"><span class="nb bot"><span class="tn">${at}</span></span></td>
+      <td class="tdh"><span class="nr mid">${h2}</span></td>
+      <td class="tda"><span class="nr mid">${a2}</span></td>
     </tr>`;
   } else {
-    const hn=kh?`<span class="pn">${esc(h.name||h.players[0])}</span><span class="tn">${esc(h.team||'')}</span>`:`<span class="wph">${phTxt(m,true)}</span><span class="wbl"></span>`;
-    const an=ka?`<span class="pn">${esc(a.name||a.players[0])}</span><span class="tn">${esc(a.team||'')}</span>`:`<span class="wph">${phTxt(m,false)}</span><span class="wbl"></span>`;
+    // Singles
+    if(!kh||!ka){
+      const hLabel=!kh?phTxt(m,true):'';
+      const aLabel=!ka?phTxt(m,false):'';
+      const hName=kh?`<span class="pn">${esc(h.name||h.players[0])}</span>`:`<span class="wbl"></span>`;
+      const aName=ka?`<span class="pn">${esc(a.name||a.players[0])}</span>`:`<span class="wbl"></span>`;
+      return`<tr>
+        <td class="tdm" rowspan="2">${m.id}</td>
+        <td class="tdh"><span class="nr wlbl">${hLabel}</span></td>
+        <td class="tds" rowspan="2"><div class="sc"></div></td>
+        <td class="tda"><span class="nr wlbl">${aLabel}</span></td>
+      </tr><tr>
+        <td class="tdh"><span class="nr">${hName}</span></td>
+        <td class="tda"><span class="nr">${aName}</span></td>
+      </tr>`;
+    }
+    const hn=`<span class="pn">${esc(h.name||h.players[0])}</span>`;
+    const an=`<span class="pn">${esc(a.name||a.players[0])}</span>`;
     return`<tr>
       <td class="tdm">${m.id}</td>
-      <td class="tdh"><span class="nb">${hn}</span></td>
-      <td class="tds"><div class="sc">___ &ndash; ___</div></td>
-      <td class="tda"><span class="nb">${an}</span></td>
+      <td class="tdh"><span class="nr">${hn}</span></td>
+      <td class="tds"><div class="sc"></div></td>
+      <td class="tda"><span class="nr">${an}</span></td>
     </tr>`;
   }
 }
