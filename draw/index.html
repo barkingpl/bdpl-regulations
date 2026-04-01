@@ -7,621 +7,475 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:Arial,Helvetica,sans-serif;background:#eef0f4;color:#111;font-size:14px;}
+
+/* ---- SCREEN UI ---- */
+.app{max-width:940px;margin:0 auto;padding:20px 16px;}
+.app-hdr{margin-bottom:20px;}
+.app-hdr .lg{font-size:11px;font-weight:700;letter-spacing:2px;color:#0d2b45;text-transform:uppercase;}
+.app-hdr h1{font-size:22px;font-weight:700;color:#0d2b45;}
+.app-hdr p{font-size:12px;color:#666;margin-top:2px;}
+
+.card{background:white;border-radius:8px;border:1px solid #ddd;margin-bottom:18px;overflow:hidden;}
+.card.off{opacity:.4;pointer-events:none;}
+.ch{background:#0d2b45;color:white;padding:12px 18px;display:flex;align-items:center;gap:10px;}
+.ch h2{font-size:13px;font-weight:700;}
+.sn{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.cb{padding:18px;}
+
+.drop{border:2px dashed #ccc;border-radius:6px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color .15s;}
+.drop:hover,.drop.on{border-color:#0d2b45;background:#f0f4f8;}
+.drop svg{color:#0d2b45;margin-bottom:8px;}
+.drop .dt{font-size:14px;font-weight:700;color:#0d2b45;}
+.drop .ds{font-size:12px;color:#888;margin-top:4px;}
+input[type=file]{display:none;}
+
+.or{display:flex;align-items:center;gap:12px;margin:14px 0;}
+.or::before,.or::after{content:'';flex:1;height:1px;background:#e0e0e0;}
+.or span{font-size:11px;color:#aaa;}
+.url-r{display:flex;gap:8px;}
+.url-r input{flex:1;padding:8px 10px;border:1px solid #ccc;border-radius:5px;font-size:12px;font-family:inherit;}
+
+.fr{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.fg{display:flex;flex-direction:column;gap:4px;flex:1;min-width:160px;}
+.fg label{font-size:11px;color:#555;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+.fg input,.fg select{padding:8px 10px;border:1px solid #ccc;border-radius:5px;font-size:13px;font-family:inherit;}
+
+.btn{padding:9px 18px;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;color:white;display:inline-flex;align-items:center;gap:6px;}
+.bg{background:#27ae60;}.bb{background:#2980b9;}.bp{background:#8e44ad;}.br{background:#c0392b;}.bd{background:#0d2b45;}
+.bgrp{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+
+.ibar{background:#f0f4f8;border-radius:6px;padding:10px 14px;font-size:12px;color:#555;display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
+.ibar strong{color:#0d2b45;}
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:14px;}
+.vc{background:#f8f9fa;border:1px solid #ddd;border-radius:6px;padding:8px 12px;font-size:11px;}
+.vc .vn{font-weight:700;color:#0d2b45;font-size:12px;}
+.vc .vo{color:#555;margin-top:2px;}
+.err{background:#fdf0f0;border:1px solid #f5c6cb;border-radius:5px;padding:10px 14px;font-size:12px;color:#c0392b;margin-bottom:12px;}
+.lok{color:#27ae60;font-weight:700;font-size:13px;}
+.cok{color:#27ae60;font-weight:700;}
+.cwarn{color:#e67e22;font-weight:700;}
+
+/* ---- PRINT SHEETS ---- */
+.sa{margin-top:8px;}
+
+.page{
+  background:white;
+  padding:16px 18px 14px;
+  margin-bottom:24px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+/* header */
+.ph{text-align:center;margin-bottom:14px;}
+.ph .lg2{font-size:9px;font-weight:700;letter-spacing:2px;color:#444;text-transform:uppercase;}
+.ph .cn{font-size:15px;font-weight:700;color:#0d2b45;margin:3px 0;}
+.ph .vn{font-size:20px;font-weight:700;color:#c0392b;margin:2px 0;}
+.ph .dm{font-size:11px;color:#444;margin-top:3px;}
+.ph .bdg{display:inline-block;background:#0d2b45;color:white;font-size:9px;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:6px;}
+.ph .og{font-size:10px;color:#666;margin-top:4px;}
+.ph hr{border:none;border-top:2px solid #0d2b45;margin:8px 0 0;}
+
+/* round section */
+.rb{margin-bottom:14px;}
+.rl{text-align:center;font-size:12px;color:#444;padding:5px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;background:#f9f9f9;margin-bottom:0;}
+
+/* draw table */
+table.dt{width:100%;border-collapse:collapse;border-left:1px solid #bbb;border-right:1px solid #bbb;border-bottom:1px solid #bbb;}
+table.dt thead tr{background:#2c3e6b;}
+table.dt thead th{color:white;font-size:11px;font-weight:700;padding:7px 8px;text-align:center;border:1px solid #3d5280;}
+th.thm{width:40px;}
+th.ths{width:80px;}
+
+table.dt tbody td{border:1px solid #d0d0d0;vertical-align:middle;}
+td.tdm{width:40px;text-align:center;font-size:13px;font-weight:700;color:#2c3e6b;padding:0;vertical-align:middle;}
+td.tdh{text-align:center;padding:0;}
+td.tda{text-align:center;padding:0;}
+td.tds{width:80px;text-align:center;padding:0;vertical-align:middle;}
+
+/* name blocks inside cells */
+.nb{padding:7px 12px;display:block;min-height:20px;}
+.nb.top{border-bottom:1px solid #e8e8e8;}
+.nb.mid{border-bottom:1px solid #e8e8e8;}
+.nb.bot{padding:4px 12px;}
+.pn{font-size:12px;font-weight:700;color:#111;display:block;text-align:center;}
+.tn{font-size:9px;color:#999;display:block;text-align:center;margin-top:1px;}
+.bye{font-size:12px;color:#555;display:block;text-align:center;}
+.wph{font-size:10px;color:#c0392b;display:block;text-align:center;line-height:1.6;}
+.wbl{display:block;border-bottom:1px solid #ccc;min-height:18px;margin:5px 20px 3px;}
+
+/* score block */
+.sc{display:flex;align-items:center;justify-content:center;min-height:100%;padding:6px 4px;font-size:17px;font-weight:700;color:#333;}
+.sc.bye-sc{font-size:15px;color:#333;}
+
+/* footer */
+.pf{margin-top:12px;border-top:1px solid #ddd;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#999;}
+
+/* PRINT */
 @media print{
   .screen{display:none!important;}
   body{background:white;}
-  .page{page-break-after:always!important;margin:0!important;border:none!important;border-radius:0!important;box-shadow:none!important;}
-  @page{size:A4 portrait;margin:8mm;}
+  .sa{margin:0;padding:0;}
+  .page{page-break-after:always;margin:0;border:none;border-radius:0;padding:10mm 12mm;}
+  @page{size:A4 portrait;margin:0;}
 }
-.screen{}
-.app{max-width:920px;margin:0 auto;padding:20px 16px;}
-.app-header{margin-bottom:20px;}
-.app-header .league{font-size:11px;font-weight:700;letter-spacing:2px;color:#0d2b45;text-transform:uppercase;}
-.app-header h1{font-size:22px;font-weight:700;color:#0d2b45;margin:2px 0;}
-.app-header p{font-size:12px;color:#666;}
-
-.card{background:white;border-radius:8px;border:1px solid #ddd;margin-bottom:18px;overflow:hidden;}
-.card.disabled{opacity:0.45;pointer-events:none;}
-.card-head{background:#0d2b45;color:white;padding:12px 18px;display:flex;align-items:center;gap:10px;}
-.card-head h2{font-size:13px;font-weight:700;}
-.step-num{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
-.step-done .card-head{background:#27ae60;}
-.card-body{padding:18px;}
-
-.upload-zone{border:2px dashed #ccc;border-radius:6px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;}
-.upload-zone:hover,.upload-zone.drag{border-color:#0d2b45;background:#f0f4f8;}
-.upload-zone svg{color:#0d2b45;margin-bottom:8px;}
-.upload-zone .uz-title{font-size:14px;font-weight:700;color:#0d2b45;}
-.upload-zone .uz-sub{font-size:12px;color:#888;margin-top:4px;}
-input[type=file]{display:none;}
-
-.or-row{display:flex;align-items:center;gap:12px;margin:14px 0;}
-.or-row::before,.or-row::after{content:'';flex:1;height:1px;background:#e0e0e0;}
-.or-row span{font-size:11px;color:#aaa;}
-
-.url-row{display:flex;gap:8px;}
-.url-row input{flex:1;padding:8px 10px;border:1px solid #ccc;border-radius:5px;font-size:12px;font-family:inherit;}
-
-.form-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
-.form-group{display:flex;flex-direction:column;gap:4px;flex:1;min-width:160px;}
-.form-group label{font-size:11px;color:#555;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
-.form-group input,.form-group select{padding:8px 10px;border:1px solid #ccc;border-radius:5px;font-size:13px;font-family:inherit;}
-
-.btn{padding:9px 18px;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;color:white;display:inline-flex;align-items:center;gap:6px;}
-.btn-green{background:#27ae60;}.btn-blue{background:#2980b9;}.btn-purple{background:#8e44ad;}.btn-red{background:#c0392b;}.btn-dark{background:#0d2b45;}
-.btn-group{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-
-.tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;}
-.tag-blue{background:#dceefb;color:#1a6fa0;}.tag-green{background:#d4edda;color:#155724;}.tag-orange{background:#fff3cd;color:#856404;}
-
-.info-bar{background:#f0f4f8;border-radius:6px;padding:10px 14px;font-size:12px;color:#555;display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
-.info-bar strong{color:#0d2b45;}
-
-.clash-count{font-weight:700;}
-.clash-ok{color:#27ae60;}.clash-warn{color:#e67e22;}
-
-.venue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:14px;}
-.venue-chip{background:#f8f9fa;border:1px solid #ddd;border-radius:6px;padding:8px 12px;font-size:11px;}
-.venue-chip .vc-name{font-weight:700;color:#0d2b45;font-size:12px;}
-.venue-chip .vc-org{color:#555;margin-top:2px;}
-.venue-chip .vc-count{color:#888;margin-top:2px;}
-
-.err{background:#fdf0f0;border:1px solid #f5c6cb;border-radius:5px;padding:10px 14px;font-size:12px;color:#c0392b;margin-bottom:12px;}
-
-.locked-badge{color:#27ae60;font-weight:700;font-size:13px;}
-
-/* ===== PRINT SHEETS ===== */
-.sheets-area{margin-top:4px;}
-.page{background:white;padding:14px 16px 12px;margin-bottom:20px;border:1px solid #ccc;border-radius:6px;}
-
-.ph{padding-bottom:8px;margin-bottom:10px;}
-.ph .ph-venue{font-size:16px;font-weight:700;color:#0d2b45;margin-bottom:2px;}
-.ph .ph-comp{font-size:11px;color:#444;}
-.ph .ph-org{font-size:10px;color:#666;margin-top:2px;}
-
-.round-block{margin-bottom:12px;}
-.round-lbl{font-size:12px;font-weight:400;color:#333;padding:5px 0;text-align:center;background:#fafafa;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-bottom:-1px;}
-
-table.dt{width:100%;border-collapse:collapse;border:1px solid #ccc;}
-table.dt thead tr{background:#2c3e6b;}
-table.dt thead th{color:white;font-size:11px;font-weight:700;padding:7px 10px;border:1px solid #3d5280;text-align:center;}
-table.dt thead th.th-m{width:44px;}
-table.dt thead th.th-s{width:90px;}
-
-table.dt tbody td{border:1px solid #ccc;vertical-align:middle;padding:0;}
-td.td-m{text-align:center;font-size:13px;font-weight:700;color:#2c3e6b;background:white;width:44px;vertical-align:middle;}
-td.td-h{text-align:center;}
-td.td-a{text-align:center;}
-td.td-s{text-align:center;width:90px;vertical-align:middle;}
-
-.nc{padding:6px 10px;min-height:22px;display:block;text-align:center;}
-.nc-top{border-bottom:1px solid #eee;}
-.n-known{font-size:12px;color:#111;line-height:1.4;}
-.n-team{font-size:9px;color:#999;margin-top:1px;}
-.n-bye{font-size:12px;color:#555;}
-.n-ph{font-size:10px;color:#c0392b;}
-.n-blank{display:block;border-bottom:1px solid #bbb;min-height:16px;margin:4px 16px 2px;}
-.sc-inner{padding:4px 6px;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#333;white-space:nowrap;}
-
-.pf{border-top:1px solid #ddd;padding-top:8px;margin-top:10px;display:flex;justify-content:space-between;font-size:9px;color:#999;}
 </style>
 </head>
 <body>
+
+<!-- SCREEN UI -->
 <div class="app screen">
-  <div class="app-header">
-    <div class="league">Barking &amp; District Pool League</div>
+  <div class="app-hdr">
+    <div class="lg">Barking &amp; District Pool League</div>
     <h1>Draw Generator</h1>
     <p>Upload your entries file, configure the competition, and generate printable draw sheets.</p>
   </div>
 
-  <!-- STEP 1: UPLOAD -->
-  <div class="card" id="card-upload">
-    <div class="card-head"><div class="step-num">1</div><h2>Load Entries</h2></div>
-    <div class="card-body">
-      <div id="err-upload" class="err" style="display:none"></div>
-      <div class="upload-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+  <div class="card" id="c1">
+    <div class="ch"><div class="sn">1</div><h2>Load Entries</h2></div>
+    <div class="cb">
+      <div id="e1" class="err" style="display:none"></div>
+      <div class="drop" id="dz" onclick="document.getElementById('fi').click()">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <div class="uz-title">Click to upload or drag &amp; drop</div>
-        <div class="uz-sub">CSV or XLSX — columns: Description, Team, Entered Date, Payment Status, Organiser, Venue</div>
+        <div class="dt">Click to upload or drag &amp; drop</div>
+        <div class="ds">CSV or XLSX — columns: Description, Team, Entered Date, Payment Status, Organiser, Venue</div>
       </div>
-      <input type="file" id="file-input" accept=".csv,.xlsx,.xls">
-      <div class="or-row"><span>or load from repo URL</span></div>
-      <div class="url-row">
-        <input type="text" id="url-input" placeholder="e.g. competitions/henry-thorpe-2026.csv">
-        <button class="btn btn-dark" onclick="loadFromUrl()">Load</button>
+      <input type="file" id="fi" accept=".csv,.xlsx,.xls">
+      <div class="or"><span>or load from URL / repo path</span></div>
+      <div class="url-r">
+        <input type="text" id="ui" placeholder="e.g. competitions/henry-thorpe-2026.csv">
+        <button class="btn bd" onclick="loadUrl()">Load</button>
       </div>
-      <div id="upload-preview" style="display:none;margin-top:16px;">
-        <div class="info-bar" id="upload-stats"></div>
-        <div style="max-height:200px;overflow-y:auto;border:1px solid #eee;border-radius:4px;">
-          <table class="dt" style="font-size:11px;" id="preview-table">
-            <thead><tr style="background:#2c3e6b;"><th style="color:white;padding:5px 8px;text-align:left;">Name / Pair</th><th style="color:white;padding:5px 8px;text-align:left;">Team</th><th style="color:white;padding:5px 8px;text-align:left;">Organiser</th><th style="color:white;padding:5px 8px;text-align:left;">Venue</th></tr></thead>
-            <tbody id="preview-body"></tbody>
+      <div id="up" style="display:none;margin-top:16px;">
+        <div class="ibar" id="us"></div>
+        <div style="max-height:180px;overflow-y:auto;border:1px solid #eee;border-radius:4px;">
+          <table style="width:100%;border-collapse:collapse;font-size:11px;">
+            <thead><tr style="background:#2c3e6b;"><th style="color:white;padding:5px 8px;text-align:left;">Entrant</th><th style="color:white;padding:5px 8px;text-align:left;">Team</th><th style="color:white;padding:5px 8px;">Organiser</th><th style="color:white;padding:5px 8px;">Venue</th></tr></thead>
+            <tbody id="pb"></tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- STEP 2: CONFIG -->
-  <div class="card disabled" id="card-config">
-    <div class="card-head"><div class="step-num">2</div><h2>Competition Settings</h2></div>
-    <div class="card-body">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Competition Name</label>
-          <input type="text" id="cfg-name" placeholder="e.g. Henry Thorpe Pairs 2026" value="">
-        </div>
-        <div class="form-group" style="max-width:140px;">
-          <label>Race To</label>
-          <input type="number" id="cfg-raceto" value="2" min="1" max="9">
-        </div>
-        <div class="form-group" style="max-width:140px;">
-          <label>Date</label>
-          <input type="date" id="cfg-date">
-        </div>
+  <div class="card off" id="c2">
+    <div class="ch"><div class="sn">2</div><h2>Competition Settings</h2></div>
+    <div class="cb">
+      <div class="fr">
+        <div class="fg"><label>Competition Name</label><input type="text" id="cn" placeholder="e.g. Henry Thorpe Pairs 2026"></div>
+        <div class="fg" style="max-width:130px;"><label>Race To</label><input type="number" id="rt" value="2" min="1" max="9"></div>
+        <div class="fg" style="max-width:170px;"><label>Date</label><input type="date" id="cd"></div>
       </div>
-      <div id="venue-summary" style="display:none;">
-        <div class="info-bar" id="cfg-stats"></div>
-        <div class="venue-grid" id="venue-grid"></div>
+      <div id="vs" style="display:none;">
+        <div class="ibar" id="cs"></div>
+        <div class="vg" id="vg"></div>
       </div>
-      <div class="btn-group">
-        <button class="btn btn-green" onclick="confirmConfig()">Confirm &amp; Proceed</button>
-      </div>
+      <button class="btn bg" onclick="confirmCfg()">Confirm &amp; Proceed</button>
     </div>
   </div>
 
-  <!-- STEP 3: DRAW -->
-  <div class="card disabled" id="card-draw">
-    <div class="card-head"><div class="step-num">3</div><h2>Generate Draw</h2></div>
-    <div class="card-body">
-      <div class="info-bar" id="draw-stats" style="display:none;"></div>
-      <div class="btn-group" id="draw-btns">
-        <button class="btn btn-green" onclick="generateDraw()">🎲 Generate Draw</button>
+  <div class="card off" id="c3">
+    <div class="ch"><div class="sn">3</div><h2>Generate Draw</h2></div>
+    <div class="cb">
+      <div class="ibar" id="ds" style="display:none;"></div>
+      <div class="bgrp" id="db">
+        <button class="btn bg" onclick="genDraw()">🎲 Generate Draw</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- SHEETS -->
-<div id="sheets-screen" class="app sheets-area" style="display:none;"></div>
+<div id="sh" class="sa" style="display:none;"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
-// ============================================================
-// STATE
-// ============================================================
-let entrants = [];
-let config = {};
-let currentDraw = null;
-let locked = false;
-let isPairs = false;
+let ents=[], cfg={}, draw=null, locked=false, isPairs=false;
 
-// ============================================================
-// UPLOAD & PARSE
-// ============================================================
-const dropZone = document.getElementById('drop-zone');
-const fileInput = document.getElementById('file-input');
+// ---- UPLOAD ----
+const dz=document.getElementById('dz'), fi=document.getElementById('fi');
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('on');});
+dz.addEventListener('dragleave',()=>dz.classList.remove('on'));
+dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('on');handleFile(e.dataTransfer.files[0]);});
+fi.addEventListener('change',()=>handleFile(fi.files[0]));
 
-dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag'); });
-dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
-dropZone.addEventListener('drop', e => { e.preventDefault(); dropZone.classList.remove('drag'); handleFile(e.dataTransfer.files[0]); });
-fileInput.addEventListener('change', () => handleFile(fileInput.files[0]));
+function handleFile(f){
+  if(!f)return;
+  const ext=f.name.split('.').pop().toLowerCase();
+  if(ext==='csv'){const r=new FileReader();r.onload=e=>parseCsv(e.target.result);r.readAsText(f);}
+  else if(ext==='xlsx'||ext==='xls'){const r=new FileReader();r.onload=e=>parseXlsx(e.target.result);r.readAsArrayBuffer(f);}
+  else showErr('e1','Please upload a CSV or XLSX file.');
+}
+function loadUrl(){
+  let url=document.getElementById('ui').value.trim();
+  if(!url)return;
+  if(!url.startsWith('http')){const b=window.location.href.replace(/\/[^/]*$/,'/');url=b+url;}
+  fetch(url).then(r=>{if(!r.ok)throw new Error('Could not fetch');return r.text();}).then(t=>parseCsv(t)).catch(e=>showErr('e1','Failed: '+e.message));
+}
+function parseCsv(t){processRows(Papa.parse(t,{header:true,skipEmptyLines:true}).data);}
+function parseXlsx(buf){const wb=XLSX.read(buf,{type:'array'});processRows(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:''}));}
 
-function handleFile(file) {
-  if (!file) return;
-  const ext = file.name.split('.').pop().toLowerCase();
-  if (ext === 'csv') {
-    const reader = new FileReader();
-    reader.onload = e => parseCsv(e.target.result);
-    reader.readAsText(file);
-  } else if (ext === 'xlsx' || ext === 'xls') {
-    const reader = new FileReader();
-    reader.onload = e => parseXlsx(e.target.result);
-    reader.readAsArrayBuffer(file);
-  } else {
-    showErr('upload', 'Please upload a CSV or XLSX file.');
-  }
+function processRows(rows){
+  clearErr('e1');
+  if(!rows||!rows.length){showErr('e1','No data found.');return;}
+  const norm=rows.map(r=>{const o={};for(const k in r)o[k.trim().toLowerCase()]=String(r[k]||'').trim();return o;});
+  if(!('description' in norm[0])){showErr('e1','Missing required column: Description');return;}
+  ents=norm.map(r=>({
+    name:r['description']||'',
+    team:r['team']||'',
+    organiser:(r['organiser']||'').toLowerCase()==='true',
+    venue:r['venue']||''
+  })).filter(e=>e.name);
+  if(ents.length<2){showErr('e1','Not enough entrants.');return;}
+  isPairs=ents.some(e=>e.name.includes(' & '));
+  ents=ents.map(e=>({...e,players:isPairs?e.name.split(' & ').map(s=>s.trim()):[e.name]}));
+  showPreview();
+  populateCfg();
+  document.getElementById('c2').classList.remove('off');
 }
 
-function loadFromUrl() {
-  let url = document.getElementById('url-input').value.trim();
-  if (!url) return;
-  if (!url.startsWith('http')) {
-    // relative path — resolve against page URL
-    const base = window.location.href.replace(/\/[^/]*$/, '/');
-    url = base + url;
-  }
-  fetch(url)
-    .then(r => { if (!r.ok) throw new Error('Could not fetch file'); return r.text(); })
-    .then(text => {
-      if (url.endsWith('.csv')) parseCsv(text);
-      else showErr('upload', 'URL loading only supports CSV files.');
-    })
-    .catch(e => showErr('upload', 'Failed to load file: ' + e.message));
-}
-
-function parseCsv(text) {
-  const result = Papa.parse(text, { header: true, skipEmptyLines: true });
-  processRows(result.data);
-}
-
-function parseXlsx(buffer) {
-  const wb = XLSX.read(buffer, { type: 'array' });
-  const ws = wb.Sheets[wb.SheetNames[0]];
-  const rows = XLSX.utils.sheet_to_json(ws, { defval: '' });
-  processRows(rows);
-}
-
-function processRows(rows) {
-  clearErr('upload');
-  if (!rows || rows.length === 0) { showErr('upload', 'No data found in file.'); return; }
-
-  // Normalise headers (case-insensitive, trim)
-  const norm = rows.map(r => {
-    const out = {};
-    for (const k in r) out[k.trim().toLowerCase()] = String(r[k] || '').trim();
-    return out;
-  });
-
-  if (!norm[0].hasOwnProperty('description')) { showErr('upload', 'Missing required column: Description'); return; }
-
-  entrants = norm.map(r => ({
-    name: r['description'] || '',
-    team: r['team'] || '',
-    organiser: (r['organiser'] || '').toLowerCase() === 'true',
-    venue: r['venue'] || ''
-  })).filter(e => e.name);
-
-  if (entrants.length < 2) { showErr('upload', 'Not enough entrants found.'); return; }
-
-  isPairs = entrants.some(e => e.name.includes(' & '));
-
-  // Split names for pairs
-  entrants = entrants.map(e => ({
-    ...e,
-    players: isPairs ? e.name.split(' & ').map(s => s.trim()) : [e.name]
-  }));
-
-  showUploadPreview();
-  populateConfig();
-  document.getElementById('card-config').classList.remove('disabled');
-}
-
-function showUploadPreview() {
-  const stats = document.getElementById('upload-stats');
-  const orgs = entrants.filter(e => e.organiser);
-  const venues = [...new Set(orgs.map(e => e.venue))];
-  stats.innerHTML = `
-    <span>Entrants: <strong>${entrants.length}</strong></span>
-    <span>Format: <strong>${isPairs ? 'Pairs' : 'Singles'}</strong></span>
-    <span>Organisers: <strong>${orgs.length}</strong></span>
+function showPreview(){
+  const orgs=ents.filter(e=>e.organiser);
+  const venues=[...new Set(orgs.map(e=>e.venue))];
+  const bs=nextP2(ents.length/Math.max(venues.length,1))*venues.length;
+  document.getElementById('us').innerHTML=`
+    <span>Entrants: <strong>${ents.length}</strong></span>
+    <span>Format: <strong>${isPairs?'Pairs':'Singles'}</strong></span>
     <span>Venues: <strong>${venues.length}</strong></span>
-    <span>Draw size: <strong>${nextPow2(entrants.length / venues.length) * venues.length}</strong> (${entrants.length} + ${nextPow2(entrants.length / venues.length) * venues.length - entrants.length} byes)</span>
-  `;
-  const tbody = document.getElementById('preview-body');
-  tbody.innerHTML = entrants.map(e => `
-    <tr>
-      <td>${e.name}</td>
-      <td>${e.team}</td>
-      <td>${e.organiser ? '<span class="tag tag-green">Organiser</span>' : ''}</td>
-      <td>${e.venue ? `<span class="tag tag-blue">${e.venue}</span>` : ''}</td>
-    </tr>
-  `).join('');
-  document.getElementById('upload-preview').style.display = 'block';
+    <span>Draw size: <strong>${bs}</strong> (${bs-ents.length} byes)</span>`;
+  document.getElementById('pb').innerHTML=ents.map(e=>`<tr style="border-bottom:1px solid #eee;">
+    <td style="padding:4px 8px;">${e.name}</td>
+    <td style="padding:4px 8px;">${e.team}</td>
+    <td style="padding:4px 8px;text-align:center;">${e.organiser?'✅':''}</td>
+    <td style="padding:4px 8px;">${e.venue||''}</td>
+  </tr>`).join('');
+  document.getElementById('up').style.display='block';
 }
 
-function populateConfig() {
-  // Auto-detect competition name if entrants has a comp name column... or leave blank
-  const d = new Date();
-  d.setDate(d.getDate() + 7);
-  document.getElementById('cfg-date').value = d.toISOString().split('T')[0];
-
-  // Show venue summary
-  const orgs = entrants.filter(e => e.organiser);
-  const venues = [...new Set(orgs.map(e => e.venue))].sort();
-  const vGrid = document.getElementById('venue-grid');
-  vGrid.innerHTML = venues.map(v => {
-    const org = orgs.find(e => e.venue === v);
-    const seeded = entrants.filter(e => !e.organiser && e.venue === v);
-    return `<div class="venue-chip">
-      <div class="vc-name">${v}</div>
-      <div class="vc-org">Org: ${org ? org.name : 'Unknown'}</div>
-      ${seeded.length > 0 ? `<div class="vc-count">${seeded.length} seeded</div>` : ''}
-    </div>`;
+function populateCfg(){
+  const d=new Date();d.setDate(d.getDate()+7);
+  document.getElementById('cd').value=d.toISOString().split('T')[0];
+  const orgs=ents.filter(e=>e.organiser);
+  const venues=[...new Set(orgs.map(e=>e.venue))].sort();
+  document.getElementById('vg').innerHTML=venues.map(v=>{
+    const org=orgs.find(e=>e.venue===v);
+    const seeded=ents.filter(e=>!e.organiser&&e.venue===v);
+    return`<div class="vc"><div class="vn">${v}</div><div class="vo">Org: ${org?org.name:'?'}</div>${seeded.length?`<div style="font-size:10px;color:#888;margin-top:2px;">${seeded.length} seeded</div>`:''}</div>`;
   }).join('');
-
-  const allSeeded = entrants.filter(e => e.venue).length;
-  const unassigned = entrants.filter(e => !e.venue).length;
-  document.getElementById('cfg-stats').innerHTML = `
-    <span>Total venues: <strong>${venues.length}</strong></span>
-    <span>Seeded: <strong>${allSeeded}</strong></span>
-    <span>Random pool: <strong>${unassigned}</strong></span>
-  `;
-  document.getElementById('venue-summary').style.display = 'block';
+  document.getElementById('cs').innerHTML=`<span>Venues: <strong>${venues.length}</strong></span><span>Seeded: <strong>${ents.filter(e=>e.venue).length}</strong></span><span>Random pool: <strong>${ents.filter(e=>!e.venue).length}</strong></span>`;
+  document.getElementById('vs').style.display='block';
 }
 
-function confirmConfig() {
-  const name = document.getElementById('cfg-name').value.trim();
-  const dateVal = document.getElementById('cfg-date').value;
-  if (!name) { showErr('upload', 'Please enter a competition name.'); document.getElementById('cfg-name').focus(); return; }
-  config = {
-    name,
-    raceTo: parseInt(document.getElementById('cfg-raceto').value) || 2,
-    date: dateVal ? formatDate(dateVal) : '',
-    format: isPairs ? 'Pairs' : 'Singles'
-  };
-  document.getElementById('card-draw').classList.remove('disabled');
-  document.getElementById('card-draw').scrollIntoView({ behavior: 'smooth' });
+function confirmCfg(){
+  const name=document.getElementById('cn').value.trim();
+  if(!name){document.getElementById('cn').focus();return;}
+  const dv=document.getElementById('cd').value;
+  cfg={name,raceTo:parseInt(document.getElementById('rt').value)||2,date:dv?fmtDate(dv):'',format:isPairs?'Pairs':'Singles'};
+  document.getElementById('c3').classList.remove('off');
+  document.getElementById('c3').scrollIntoView({behavior:'smooth'});
 }
 
-function formatDate(iso) {
-  const d = new Date(iso + 'T12:00:00');
-  return d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+function fmtDate(iso){
+  const d=new Date(iso+'T12:00:00');
+  return d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 }
 
-// ============================================================
-// DRAW ALGORITHM
-// ============================================================
-function shuffle(a) { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
-function nextPow2(n) { n = Math.ceil(n); let p = 1; while (p < n) p *= 2; return p; }
+// ---- DRAW ALGORITHM ----
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function nextP2(n){n=Math.ceil(n);let p=1;while(p<n)p*=2;return p;}
 
-function generateDraw() {
-  locked = false;
+function genDraw(){
+  locked=false;
+  const orgs=ents.filter(e=>e.organiser);
+  const venues=[...new Set(orgs.map(e=>e.venue))].sort();
+  const nv=venues.length;
+  const base=Math.floor(ents.length/nv), extra=ents.length%nv;
+  const maxPV=base+(extra>0?1:0);
+  const bracket=nextP2(maxPV);
 
-  const orgs = entrants.filter(e => e.organiser);
-  const venues = [...new Set(orgs.map(e => e.venue))].sort();
-  const numVenues = venues.length;
-  const totalEntrants = entrants.length;
-
-  // Work out bracket size per venue
-  // Distribute entrants as evenly as possible
-  const baseCount = Math.floor(totalEntrants / numVenues);
-  const extra = totalEntrants % numVenues;
-  // Some venues get baseCount+1, others baseCount
-  // Bracket size is next power of 2 for the max per-venue count
-  const maxPerVenue = baseCount + (extra > 0 ? 1 : 0);
-  const bracketSize = nextPow2(maxPerVenue);
-
-  // Build venue objects, pre-populate with seeded players (organiser + venue-seeded)
-  const venueMap = {};
-  venues.forEach((v, i) => {
-    const org = orgs.find(e => e.venue === v);
-    venueMap[v] = {
-      name: v,
-      org: org ? org.name : '',
-      players: org ? [{ ...org }] : [],
-      cap: i < extra ? baseCount + 1 : baseCount,
-      bracketSize
-    };
+  // Build venue buckets
+  const vm={};
+  venues.forEach((v,i)=>{
+    const org=orgs.find(e=>e.venue===v);
+    vm[v]={name:v,org:org?org.name:'',players:org?[{...org}]:[],cap:i<extra?base+1:base,bracket};
   });
-
-  // Add non-organiser seeded players to their venue
-  const seededNonOrg = entrants.filter(e => !e.organiser && e.venue);
-  for (const p of seededNonOrg) {
-    if (venueMap[p.venue]) {
-      venueMap[p.venue].players.push({ ...p });
-      venueMap[p.venue].cap--;
+  // Seeded non-org players
+  ents.filter(e=>!e.organiser&&e.venue).forEach(p=>{
+    if(vm[p.venue]){vm[p.venue].players.push({...p});vm[p.venue].cap--;}
+  });
+  // Random pool
+  const pool=shuffle(ents.filter(e=>!e.organiser&&!e.venue));
+  for(const p of pool){
+    const avail=venues.filter(v=>vm[v].cap>0);
+    let best=null,bs=-Infinity;
+    for(const v of avail){
+      const clash=vm[v].players.filter(x=>x.team&&p.team&&x.team===p.team).length;
+      const sc=-clash*1000+vm[v].cap+Math.random()*.5;
+      if(sc>bs){bs=sc;best=v;}
     }
+    if(best){vm[best].players.push({...p});vm[best].cap--;}
   }
 
-  // Distribute remaining players randomly, minimising same-team clashes per venue
-  const pool = shuffle(entrants.filter(e => !e.organiser && !e.venue));
-  for (const player of pool) {
-    const vList = venues.filter(v => venueMap[v].cap > 0);
-    let best = null, bestScore = -Infinity;
-    for (const v of vList) {
-      const sameTeam = venueMap[v].players.filter(p => p.team && player.team && p.team === player.team).length;
-      const score = -sameTeam * 1000 + venueMap[v].cap + Math.random() * 0.5;
-      if (score > bestScore) { bestScore = score; best = v; }
-    }
-    if (best) { venueMap[best].players.push({ ...player }); venueMap[best].cap--; }
-  }
-
-  // Build bracket for each venue
-  const draw = venues.map(v => buildVenueBracket(venueMap[v]));
-  currentDraw = draw;
-
+  draw=venues.map(v=>buildBracket(vm[v]));
   renderDraw();
   renderStats();
 }
 
-function buildVenueBracket(venue) {
-  const { players, bracketSize } = venue;
-  const numByes = bracketSize - players.length;
+function buildBracket(venue){
+  const {players,bracket}=venue;
+  const nByes=bracket-players.length;
+  const pl=shuffle(players);
 
-  // Shuffle players (organiser included in shuffle)
-  const shuffled = shuffle(players);
-
-  // Place byes — spread them to avoid consecutive byes
-  // Distribute bye positions evenly
-  const slots = new Array(bracketSize).fill(null);
-  const byePositions = getByePositions(bracketSize, numByes);
-  let pi = 0;
-  for (let i = 0; i < bracketSize; i++) {
-    if (byePositions.has(i)) slots[i] = { isBye: true };
-    else slots[i] = shuffled[pi++];
+  // Place players and byes — spread byes evenly in odd (away) slots
+  const slots=new Array(bracket).fill(null);
+  const byeSlots=pickByeSlots(bracket,nByes);
+  let pi=0;
+  for(let i=0;i<bracket;i++){
+    slots[i]=byeSlots.has(i)?{isBye:true}:{...pl[pi++]};
   }
 
-  // Try to separate same-team players so they don't meet in R1
-  for (let iter = 0; iter < 60; iter++) {
-    let swapped = false;
-    outer: for (let i = 0; i < bracketSize; i += 2) {
-      const a = slots[i], b = slots[i + 1];
-      if (!a || !b || a.isBye || b.isBye) continue;
-      if (a.team && b.team && a.team === b.team) {
-        for (let k = 0; k < bracketSize; k++) {
-          if (slots[k] && !slots[k].isBye && Math.floor(k / 2) !== Math.floor(i / 2) && slots[k].team !== a.team) {
-            [slots[i + 1], slots[k]] = [slots[k], slots[i + 1]];
-            swapped = true; break outer;
-          }
+  // Separate same-team R1 matchups
+  for(let iter=0;iter<80;iter++){
+    let sw=false;
+    outer:for(let i=0;i<bracket;i+=2){
+      const a=slots[i],b=slots[i+1];
+      if(a.isBye||b.isBye)continue;
+      if(a.team&&b.team&&a.team===b.team){
+        for(let k=0;k<bracket;k++){
+          if(slots[k].isBye)continue;
+          const km=Math.floor(k/2),im=Math.floor(i/2);
+          if(km!==im&&slots[k].team!==a.team){[slots[i+1],slots[k]]=[slots[k],slots[i+1]];sw=true;break outer;}
         }
       }
     }
-    if (!swapped) break;
+    if(!sw)break;
   }
 
-  // Generate bracket rounds
-  const rounds = generateBracketRounds(bracketSize);
-
-  // Pre-compute known winners (from byes)
-  const matchWinners = computeByeWinners(rounds, slots);
-
-  // Count R1 same-team clashes
-  const r1Clashes = rounds[0].filter(m => {
-    const h = slots[m.home.slot], a = slots[m.away.slot];
-    return h && a && !h.isBye && !a.isBye && h.team && a.team && h.team === a.team;
+  const rounds=buildRounds(bracket);
+  const winners=calcByeWinners(rounds,slots);
+  const r1c=rounds[0].filter(m=>{
+    const h=slots[m.hi],a=slots[m.ai];
+    return h&&a&&!h.isBye&&!a.isBye&&h.team&&a.team&&h.team===a.team;
   }).length;
 
-  return { ...venue, slots, rounds, matchWinners, r1Clashes };
+  return{...venue,slots,rounds,winners,r1Clashes:r1c};
 }
 
-function getByePositions(size, numByes) {
-  // Spread byes evenly across the bracket, preferring odd slots
-  // to keep slot 0 (first position) as a real player
-  const positions = new Set();
-  if (numByes === 0) return positions;
-  // Place byes at evenly-spaced odd positions
-  const step = Math.floor(size / numByes);
-  let pos = 1;
-  for (let i = 0; i < numByes; i++) {
-    // Ensure odd (away) position
-    let p = pos;
-    if (p % 2 === 0) p++;
-    while (positions.has(p)) p += 2;
-    if (p >= size) p = pos % 2 === 0 ? pos + 1 : pos;
-    positions.add(Math.min(p, size - 1));
-    pos += step;
+function pickByeSlots(size,n){
+  const s=new Set();
+  if(!n)return s;
+  // Prefer to put byes in away (odd) positions, spread evenly
+  const step=size/n;
+  for(let i=0;i<n;i++){
+    let p=Math.round(i*step)+1;
+    if(p%2===0)p++;
+    while(s.has(p)&&p<size)p+=2;
+    if(p>=size){p=1;while(s.has(p))p+=2;}
+    s.add(p);
   }
-  // If we couldn't fit all, fill remaining at the end
-  if (positions.size < numByes) {
-    for (let i = size - 1; positions.size < numByes; i--) {
-      positions.add(i);
-    }
-  }
-  return positions;
+  return s;
 }
 
-function generateBracketRounds(size) {
-  const rounds = [];
-  let matchId = 1;
-  let current = [];
-  for (let i = 0; i < size; i += 2) {
-    current.push({ id: matchId++, home: { slot: i }, away: { slot: i + 1 } });
-  }
-  rounds.push([...current]);
-  while (current.length > 1) {
-    const prev = current;
-    current = [];
-    const half = prev.length / 2;
-    for (let i = 0; i < half; i++) {
-      current.push({ id: matchId++, home: { matchId: prev[i].id }, away: { matchId: prev[prev.length - 1 - i].id } });
+function buildRounds(size){
+  const rounds=[];let mid=1;
+  let cur=[];
+  for(let i=0;i<size;i+=2)cur.push({id:mid++,hi:i,ai:i+1,hm:null,am:null});
+  rounds.push([...cur]);
+  while(cur.length>1){
+    const prev=cur;cur=[];
+    for(let i=0;i<prev.length/2;i++){
+      cur.push({id:mid++,hi:null,ai:null,hm:prev[i].id,am:prev[prev.length-1-i].id});
     }
-    rounds.push([...current]);
+    rounds.push([...cur]);
   }
   return rounds;
 }
 
-function computeByeWinners(rounds, slots) {
-  const winners = {};
-  for (const round of rounds) {
-    for (const match of round) {
-      const h = resolveParticipant(match.home, slots, winners);
-      const a = resolveParticipant(match.away, slots, winners);
-      if (h && h.isBye && a && !a.isBye) winners[match.id] = a;
-      else if (a && a.isBye && h && !h.isBye) winners[match.id] = h;
-      // If both are real or both are unknown, winner not pre-determined
+function calcByeWinners(rounds,slots){
+  const w={};
+  for(const round of rounds){
+    for(const m of round){
+      const h=getP(m,true,slots,w), a=getP(m,false,slots,w);
+      if(h&&h.isBye&&a&&!a.isBye)w[m.id]=a;
+      else if(a&&a.isBye&&h&&!h.isBye)w[m.id]=h;
     }
   }
-  return winners;
+  return w;
 }
 
-function resolveParticipant(ref, slots, matchWinners) {
-  if (ref.slot !== undefined) return slots[ref.slot];
-  return matchWinners[ref.matchId] || null;
-}
-
-// ============================================================
-// RENDER
-// ============================================================
-function renderStats() {
-  const el = document.getElementById('draw-stats');
-  el.style.display = 'flex';
-  if (!currentDraw) { el.innerHTML = ''; return; }
-  const clashes = currentDraw.reduce((s, v) => s + v.r1Clashes, 0);
-  const ok = clashes === 0;
-  el.innerHTML = `
-    <span>Same-team R1 matchups: <span class="clash-count ${ok ? 'clash-ok' : 'clash-warn'}">${clashes} ${ok ? '✅' : '— try redrawing'}</span></span>
-    <span>${locked ? '<span class="locked-badge">🔒 Draw locked</span>' : 'Redraw until happy, then lock'}</span>
-  `;
-}
-
-function renderDraw() {
-  const screenEl = document.getElementById('sheets-screen');
-  if (!currentDraw) { screenEl.style.display = 'none'; return; }
-  const html = currentDraw.map(v => sheetHtml(v)).join('');
-  screenEl.innerHTML = html;
-  screenEl.style.display = 'block';
-  screenEl.scrollIntoView({ behavior: 'smooth' });
-  updateDrawBtns();
-}
-
-function updateDrawBtns() {
-  const el = document.getElementById('draw-btns');
-  if (!currentDraw) {
-    el.innerHTML = '<button class="btn btn-green" onclick="generateDraw()">🎲 Generate Draw</button>';
-  } else if (!locked) {
-    el.innerHTML = `
-      <button class="btn btn-green" onclick="generateDraw()">🔄 Redraw</button>
-      <button class="btn btn-blue" onclick="lockDraw()">✅ Lock Draw</button>
-      <button class="btn btn-red" onclick="resetDraw()">✕ Reset</button>
-    `;
+function getP(m,isHome,slots,w){
+  if(isHome){
+    if(m.hi!==null&&m.hi!==undefined)return slots[m.hi];
+    return w[m.hm]||null;
   } else {
-    el.innerHTML = `
-      <span class="locked-badge">🔒 Draw locked</span>
-      <button class="btn btn-purple" style="margin-left:8px;" onclick="window.print()">🖨️ Print All Sheets</button>
-      <button class="btn btn-red" onclick="resetDraw()">✕ Start Over</button>
-    `;
+    if(m.ai!==null&&m.ai!==undefined)return slots[m.ai];
+    return w[m.am]||null;
   }
 }
 
-function lockDraw() {
-  locked = true;
-  updateDrawBtns();
-  renderStats();
+// ---- RENDER UI ----
+function renderStats(){
+  const el=document.getElementById('ds');
+  el.style.display='flex';
+  if(!draw)return;
+  const c=draw.reduce((s,v)=>s+v.r1Clashes,0);
+  el.innerHTML=`<span>Same-team R1 matchups: <span class="${c===0?'cok':'cwarn'}">${c}${c===0?' ✅':' — try redrawing'}</span></span>
+    <span>${locked?'<span class="lok">🔒 Locked</span>':'Redraw until happy, then lock'}</span>`;
 }
 
-function resetDraw() {
-  currentDraw = null;
-  locked = false;
-  document.getElementById('sheets-screen').style.display = 'none';
-  document.getElementById('draw-stats').style.display = 'none';
-  updateDrawBtns();
+function renderDraw(){
+  const el=document.getElementById('sh');
+  el.innerHTML=draw.map(v=>sheetHtml(v)).join('');
+  el.style.display='block';
+  el.scrollIntoView({behavior:'smooth'});
+  updBtns();
 }
 
-// ============================================================
-// SHEET HTML
-// ============================================================
-function sheetHtml(venue) {
-  const { name, org, rounds, slots, matchWinners } = venue;
-  const raceTo = config.raceTo || 2;
-  const roundLabels = getRoundLabels(rounds.length);
-  const thead = `<thead><tr><th class="th-m">Match</th><th class="th-h">Home</th><th class="th-s">Race To ${raceTo}</th><th class="th-a">Away</th></tr></thead>`;
-  const roundBlocks = rounds.map((round, ri) => {
-    const label = roundLabels[ri];
-    const rows = round.map(match => matchRowHtml(match, slots, matchWinners)).join('');
-    return `<div class="round-block"><div class="round-lbl">${label}</div><table class="dt">${thead}<tbody>${rows}</tbody></table></div>`;
+function updBtns(){
+  const el=document.getElementById('db');
+  if(!draw){
+    el.innerHTML='<button class="btn bg" onclick="genDraw()">🎲 Generate Draw</button>';
+  } else if(!locked){
+    el.innerHTML=`<button class="btn bg" onclick="genDraw()">🔄 Redraw</button>
+      <button class="btn bb" onclick="lockDraw()">✅ Lock Draw</button>
+      <button class="btn br" onclick="resetDraw()">✕ Reset</button>`;
+  } else {
+    el.innerHTML=`<span class="lok">🔒 Draw locked</span>
+      <button class="btn bp" style="margin-left:8px;" onclick="window.print()">🖨️ Print All Sheets</button>
+      <button class="btn br" style="margin-left:4px;" onclick="resetDraw()">✕ Start Over</button>`;
+  }
+}
+
+function lockDraw(){locked=true;updBtns();renderStats();}
+function resetDraw(){draw=null;locked=false;document.getElementById('sh').style.display='none';document.getElementById('ds').style.display='none';updBtns();}
+
+// ---- SHEET HTML ----
+function sheetHtml(v){
+  const {name,org,rounds,slots,winners}=v;
+  const rt=cfg.raceTo||2;
+  const best=rt*2-1;
+  const lbls=roundLabels(rounds.length);
+  const thead=`<thead><tr><th class="thm">Match</th><th>Home</th><th class="ths">Race To ${rt}</th><th>Away</th></tr></thead>`;
+
+  const blocks=rounds.map((round,ri)=>{
+    const rows=round.map(m=>matchHtml(m,slots,winners)).join('');
+    return`<div class="rb"><div class="rl">${lbls[ri]}</div><table class="dt">${thead}<tbody>${rows}</tbody></table></div>`;
   }).join('');
-  const numPlayers = venue.players.length;
-  const numByes = venue.slots.length - numPlayers;
-  const unit = config.format === 'Pairs' ? 'pairs' : 'players';
-  return `<div class="page">
+
+  const np=v.players.length, nb=v.slots.length-np;
+  const unit=cfg.format==='Pairs'?'pairs':'players';
+  return`<div class="page">
     <div class="ph">
-      <div class="ph-venue">${esc(name)}</div>
-      <div class="ph-comp">${esc(config.name)} &nbsp;·&nbsp; ${esc(config.date)} &nbsp;·&nbsp; Race to ${raceTo}</div>
-      <div class="ph-org">Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; ${numPlayers} ${unit} &nbsp;·&nbsp; ${numByes} bye${numByes !== 1 ? 's' : ''}</div>
+      <div class="lg2">Barking &amp; District Pool League</div>
+      <div class="cn">${esc(cfg.name)}</div>
+      <div class="vn">${esc(name)}</div>
+      <div class="dm">${esc(cfg.date)}<span class="bdg">Race to ${rt} · Best of ${best}</span></div>
+      <div class="og">Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; ${np} ${unit} &nbsp;·&nbsp; ${nb} bye${nb!==1?'s':''}</div>
+      <hr>
     </div>
-    ${roundBlocks}
+    ${blocks}
     <div class="pf">
       <span>Organiser signature: _____________________________</span>
       <span>Time completed: _______________</span>
@@ -629,137 +483,108 @@ function sheetHtml(venue) {
   </div>`;
 }
 
-function matchRowHtml(match, slots, matchWinners) {
-  const home = resolveParticipant(match.home, slots, matchWinners);
-  const away = resolveParticipant(match.away, slots, matchWinners);
-  const isBye = (home && home.isBye) || (away && away.isBye);
-
-  if (isBye) {
-    const real = (home && !home.isBye) ? home : away;
-    return byeMatchRows(match.id, real);
+function matchHtml(m,slots,winners){
+  const h=getP(m,true,slots,winners);
+  const a=getP(m,false,slots,winners);
+  const isBye=(h&&h.isBye)||(a&&a.isBye);
+  if(isBye){
+    const real=(h&&!h.isBye)?h:a;
+    return byeRows(m.id,real);
   }
+  return liveRows(m,h,a);
+}
 
-  const knownHome = home && !home.isBye;
-  const knownAway = away && !away.isBye;
-  const clash = knownHome && knownAway && home.team && away.team && home.team === away.team;
-  const clashTag = clash ? `<span style="background:#f39c12;color:white;font-size:8px;padding:1px 4px;border-radius:2px;margin-left:4px;">SAME TEAM</span>` : '';
-
-  if (isPairs) {
-    const hp = knownHome ? (home.players || [home.name, '']) : null;
-    const ap = knownAway ? (away.players || [away.name, '']) : null;
-    const ht = knownHome ? home.team || '' : '';
-    const at = knownAway ? away.team || '' : '';
-
-    const hTop = knownHome
-      ? `<span class="n-known">${esc(hp[0])}</span>`
-      : `<span class="n-ph">${placeholderText(match.home)}</span>`;
-    const hBot = knownHome
-      ? `<span class="n-known">${esc(hp[1] || '')}</span>`
-      : `<span class="n-blank"></span>`;
-    const aTop = knownAway
-      ? `<span class="n-known">${esc(ap[0])}${clashTag}</span>`
-      : `<span class="n-ph">${placeholderText(match.away)}</span>`;
-    const aBot = knownAway
-      ? `<span class="n-known">${esc(ap[1] || '')}</span>`
-      : `<span class="n-blank"></span>`;
-
-    return `<tr>
-      <td class="td-m" rowspan="3">${match.id}</td>
-      <td class="td-h"><span class="nc nc-top">${hTop}</span></td>
-      <td class="td-s" rowspan="3"><div class="sc-inner">___ &ndash; ___</div></td>
-      <td class="td-a"><span class="nc nc-top">${aTop}</span></td>
+function byeRows(mid,real){
+  if(isPairs){
+    const p=real?real.players||[real.name,'']:['',''];
+    const tm=real?esc(real.team||''):'';
+    return`<tr>
+      <td class="tdm" rowspan="3">${mid}</td>
+      <td class="tdh"><span class="nb top"><span class="pn">${esc(p[0])}</span></span></td>
+      <td class="tds" rowspan="3"><div class="sc bye-sc">2 &ndash; 0</div></td>
+      <td class="tda"><span class="nb top"><span class="bye">Bye</span></span></td>
     </tr><tr>
-      <td class="td-h"><span class="nc nc-top">${hBot}</span></td>
-      <td class="td-a"><span class="nc nc-top">${aBot}</span></td>
+      <td class="tdh"><span class="nb mid"><span class="pn">${esc(p[1]||'')}</span></span></td>
+      <td class="tda"><span class="nb mid"></span></td>
     </tr><tr>
-      <td class="td-h"><span class="nc" style="font-size:9px;color:#999;">${esc(ht)}</span></td>
-      <td class="td-a"><span class="nc" style="font-size:9px;color:#999;">${esc(at)}</span></td>
+      <td class="tdh"><span class="nb bot"><span class="tn">${tm}</span></span></td>
+      <td class="tda"><span class="nb bot"></span></td>
     </tr>`;
   } else {
-    const hLine = knownHome
-      ? `<span class="n-known">${esc(home.name || home.players[0])}${clashTag}</span><div class="n-team">${esc(home.team || '')}</div>`
-      : `<span class="n-ph">${placeholderText(match.home)}</span><span class="n-blank"></span>`;
-    const aLine = knownAway
-      ? `<span class="n-known">${esc(away.name || away.players[0])}</span><div class="n-team">${esc(away.team || '')}</div>`
-      : `<span class="n-ph">${placeholderText(match.away)}</span><span class="n-blank"></span>`;
-    return `<tr>
-      <td class="td-m">${match.id}</td>
-      <td class="td-h"><span class="nc">${hLine}</span></td>
-      <td class="td-s"><div class="sc-inner">___ &ndash; ___</div></td>
-      <td class="td-a"><span class="nc">${aLine}</span></td>
+    const nm=real?esc(real.name||real.players[0]):'';
+    const tm=real?esc(real.team||''):'';
+    return`<tr>
+      <td class="tdm">${mid}</td>
+      <td class="tdh"><span class="nb"><span class="pn">${nm}</span><span class="tn">${tm}</span></span></td>
+      <td class="tds"><div class="sc bye-sc">2 &ndash; 0</div></td>
+      <td class="tda"><span class="nb"><span class="bye">Bye</span></span></td>
     </tr>`;
   }
 }
 
-function byeMatchRows(matchId, real) {
-  if (isPairs) {
-    const players = real.players || [real.name, ''];
-    return `<tr>
-      <td class="td-m" rowspan="3">${matchId}</td>
-      <td class="td-h"><span class="nc nc-top"><span class="n-known">${esc(players[0])}</span></span></td>
-      <td class="td-s" rowspan="3"><div class="sc-inner">2 &ndash; 0</div></td>
-      <td class="td-a"><span class="nc nc-top"><span class="n-bye">Bye</span></span></td>
+function liveRows(m,h,a){
+  const kh=h&&!h.isBye, ka=a&&!a.isBye;
+  const clash=kh&&ka&&h.team&&a.team&&h.team===a.team;
+  const ct=clash?`<span style="background:#f39c12;color:white;font-size:8px;padding:1px 4px;border-radius:2px;margin-left:4px;">SAME TEAM</span>`:'';
+
+  if(isPairs){
+    const hp=kh?(h.players||[h.name,'']):[null,null];
+    const ap=ka?(a.players||[a.name,'']):[null,null];
+    const hm=kh?esc(h.hm||h.team||''):''; // fallthrough
+    const ht=kh?esc(h.team||''):'';
+    const at=ka?esc(a.team||''):'';
+
+    const h1=kh?`<span class="pn">${esc(hp[0])}</span>`:`<span class="wph">${phTxt(m,true)}</span>`;
+    const h2=kh?`<span class="pn">${esc(hp[1]||'')}</span>`:`<span class="wbl"></span>`;
+    const a1=ka?`<span class="pn">${esc(ap[0])}${ct}</span>`:`<span class="wph">${phTxt(m,false)}</span>`;
+    const a2=ka?`<span class="pn">${esc(ap[1]||'')}</span>`:`<span class="wbl"></span>`;
+
+    return`<tr>
+      <td class="tdm" rowspan="3">${m.id}</td>
+      <td class="tdh"><span class="nb top">${h1}</span></td>
+      <td class="tds" rowspan="3"><div class="sc">___ &ndash; ___</div></td>
+      <td class="tda"><span class="nb top">${a1}</span></td>
     </tr><tr>
-      <td class="td-h"><span class="nc nc-top"><span class="n-known">${esc(players[1] || '')}</span></span></td>
-      <td class="td-a"><span class="nc nc-top"></span></td>
+      <td class="tdh"><span class="nb mid">${h2}</span></td>
+      <td class="tda"><span class="nb mid">${a2}</span></td>
     </tr><tr>
-      <td class="td-h"><span class="nc" style="font-size:9px;color:#999;">${esc(real.team || '')}</span></td>
-      <td class="td-a"></td>
+      <td class="tdh"><span class="nb bot"><span class="tn">${ht}</span></span></td>
+      <td class="tda"><span class="nb bot"><span class="tn">${at}</span></span></td>
     </tr>`;
   } else {
-    return `<tr>
-      <td class="td-m">${matchId}</td>
-      <td class="td-h"><span class="nc"><span class="n-known">${esc(real.name || real.players[0])}</span><div class="n-team">${esc(real.team || '')}</div></span></td>
-      <td class="td-s"><div class="sc-inner">2 &ndash; 0</div></td>
-      <td class="td-a"><span class="nc"><span class="n-bye">Bye</span></span></td>
+    const hn=kh?`<span class="pn">${esc(h.name||h.players[0])}</span><span class="tn">${esc(h.team||'')}</span>`:`<span class="wph">${phTxt(m,true)}</span><span class="wbl"></span>`;
+    const an=ka?`<span class="pn">${esc(a.name||a.players[0])}</span><span class="tn">${esc(a.team||'')}</span>`:`<span class="wph">${phTxt(m,false)}</span><span class="wbl"></span>`;
+    return`<tr>
+      <td class="tdm">${m.id}</td>
+      <td class="tdh"><span class="nb">${hn}</span></td>
+      <td class="tds"><div class="sc">___ &ndash; ___</div></td>
+      <td class="tda"><span class="nb">${an}</span></td>
     </tr>`;
   }
 }
 
-function placeholderText(ref) {
-  if (ref.slot !== undefined) return '';
-  return `Winner of Match ${ref.matchId}`;
+function phTxt(m,isHome){
+  const mid=isHome?m.hm:m.am;
+  return mid?`Winner of Match ${mid}`:'';
 }
 
-function getRoundLabels(totalRounds) {
-  const labels = [];
-  for (let i = 0; i < totalRounds; i++) {
-    const fromEnd = totalRounds - 1 - i;
-    if (fromEnd === 0) labels.push('Final');
-    else if (fromEnd === 1) labels.push('Semi Finals');
-    else if (fromEnd === 2) labels.push('Quarter Finals');
-    else labels.push('Round ' + (i + 1));
-  }
-  return labels;
+function roundLabels(n){
+  return Array.from({length:n},(_,i)=>{
+    const fe=n-1-i;
+    if(fe===0)return'Final';
+    if(fe===1)return'Semi Finals';
+    if(fe===2)return'Quarter Finals';
+    return`Round ${i+1}`;
+  });
 }
 
-function esc(s) {
-  if (!s) return '';
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function showErr(id,msg){const e=document.getElementById(id);if(e){e.textContent=msg;e.style.display='block';}}
+function clearErr(id){const e=document.getElementById(id);if(e)e.style.display='none';}
 
-// ============================================================
-// ERROR HELPERS
-// ============================================================
-function showErr(section, msg) {
-  const el = document.getElementById('err-' + section);
-  if (el) { el.textContent = msg; el.style.display = 'block'; }
-}
-function clearErr(section) {
-  const el = document.getElementById('err-' + section);
-  if (el) el.style.display = 'none';
-}
-
-// ============================================================
-// URL PARAM AUTO-LOAD
-// ============================================================
-window.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get('file');
-  if (file) {
-    document.getElementById('url-input').value = file;
-    loadFromUrl();
-  }
+window.addEventListener('DOMContentLoaded',()=>{
+  const p=new URLSearchParams(window.location.search),f=p.get('file');
+  if(f){document.getElementById('ui').value=f;loadUrl();}
 });
 </script>
 </body>
