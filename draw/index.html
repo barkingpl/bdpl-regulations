@@ -72,44 +72,38 @@ input[type=file]{display:none;}
 
 /* ===== PRINT SHEETS ===== */
 .sheets-area{margin-top:4px;}
-.page{background:white;padding:10px 14px 8px;margin-bottom:20px;border:1px solid #ccc;border-radius:6px;}
+.page{background:white;padding:14px 16px 12px;margin-bottom:20px;border:1px solid #ccc;border-radius:6px;}
 
-.ph{padding-bottom:10px;margin-bottom:8px;border-bottom:2px solid #0d2b45;text-align:center;}
-.ph .ph-league{font-size:8px;font-weight:700;letter-spacing:2px;color:#555;text-transform:uppercase;}
-.ph .ph-comp{font-size:14px;font-weight:700;color:#0d2b45;margin:2px 0;}
-.ph .ph-venue{font-size:18px;font-weight:700;color:#c0392b;margin:3px 0;}
-.ph .ph-meta{font-size:10px;color:#444;display:flex;justify-content:center;gap:18px;margin-top:3px;flex-wrap:wrap;align-items:center;}
-.ph .ph-badge{display:inline-block;background:#0d2b45;color:white;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px;}
-.ph .ph-org{font-size:9px;color:#666;margin-top:3px;}
+.ph{padding-bottom:8px;margin-bottom:10px;}
+.ph .ph-venue{font-size:16px;font-weight:700;color:#0d2b45;margin-bottom:2px;}
+.ph .ph-comp{font-size:11px;color:#444;}
+.ph .ph-org{font-size:10px;color:#666;margin-top:2px;}
 
-.round-block{margin-bottom:8px;}
-.round-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:#0d2b45;color:white;padding:4px 0;text-align:center;}
-.round-lbl.r-final{background:#c0392b;}
+.round-block{margin-bottom:12px;}
+.round-lbl{font-size:12px;font-weight:400;color:#333;padding:5px 0;text-align:center;background:#fafafa;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-bottom:-1px;}
 
-table.dt{width:100%;border-collapse:collapse;}
+table.dt{width:100%;border-collapse:collapse;border:1px solid #ccc;}
 table.dt thead tr{background:#2c3e6b;}
-table.dt thead th{color:white;font-size:10px;font-weight:700;padding:5px 8px;}
-table.dt thead th.th-m{width:34px;text-align:center;}
-table.dt thead th.th-h{text-align:right;}
-table.dt thead th.th-s{width:68px;text-align:center;}
-table.dt thead th.th-a{text-align:left;}
+table.dt thead th{color:white;font-size:11px;font-weight:700;padding:7px 10px;border:1px solid #3d5280;text-align:center;}
+table.dt thead th.th-m{width:44px;}
+table.dt thead th.th-s{width:90px;}
 
-table.dt tbody td{padding:3px 8px;font-size:11px;vertical-align:top;border-bottom:1px solid #eee;}
-table.dt tbody tr.match-end td{border-bottom:2px solid #ccc;}
-table.dt tbody tr.match-end-final td{border-bottom:2px solid #c0392b;}
+table.dt tbody td{border:1px solid #ccc;vertical-align:middle;padding:0;}
+td.td-m{text-align:center;font-size:13px;font-weight:700;color:#2c3e6b;background:white;width:44px;vertical-align:middle;}
+td.td-h{text-align:center;}
+td.td-a{text-align:center;}
+td.td-s{text-align:center;width:90px;vertical-align:middle;}
 
-td.td-m{text-align:center;font-weight:700;color:#2c3e6b;font-size:11px;background:#f8f8f8;vertical-align:middle;}
-td.td-h{text-align:right;}
-td.td-a{text-align:left;}
-td.td-s{text-align:center;vertical-align:middle;color:#aaa;font-size:13px;white-space:nowrap;}
+.nc{padding:6px 10px;min-height:22px;display:block;text-align:center;}
+.nc-top{border-bottom:1px solid #eee;}
+.n-known{font-size:12px;color:#111;line-height:1.4;}
+.n-team{font-size:9px;color:#999;margin-top:1px;}
+.n-bye{font-size:12px;color:#555;}
+.n-ph{font-size:10px;color:#c0392b;}
+.n-blank{display:block;border-bottom:1px solid #bbb;min-height:16px;margin:4px 16px 2px;}
+.sc-inner{padding:4px 6px;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#333;white-space:nowrap;}
 
-.n-known{font-weight:700;color:#111;display:block;line-height:1.4;}
-.n-team{font-size:9px;color:#888;display:block;}
-.n-bye{color:#2980b9;font-style:italic;font-size:10px;display:block;line-height:1.6;}
-.n-ph{color:#c0392b;font-style:italic;font-size:10px;display:block;line-height:1.5;}
-.n-blank{display:block;border-bottom:1px solid #bbb;min-height:13px;margin-top:1px;margin-bottom:2px;}
-
-.pf{border-top:1px solid #ddd;padding-top:6px;margin-top:6px;display:flex;justify-content:space-between;font-size:9px;color:#999;}
+.pf{border-top:1px solid #ddd;padding-top:8px;margin-top:10px;display:flex;justify-content:space-between;font-size:9px;color:#999;}
 </style>
 </head>
 <body>
@@ -601,7 +595,6 @@ function resetDraw() {
   currentDraw = null;
   locked = false;
   document.getElementById('sheets-screen').style.display = 'none';
-  document.getElementById('sheets-print').innerHTML = '';
   document.getElementById('draw-stats').style.display = 'none';
   updateDrawBtns();
 }
@@ -612,31 +605,21 @@ function resetDraw() {
 function sheetHtml(venue) {
   const { name, org, rounds, slots, matchWinners } = venue;
   const raceTo = config.raceTo || 2;
-  const best = raceTo * 2 - 1;
-
   const roundLabels = getRoundLabels(rounds.length);
   const thead = `<thead><tr><th class="th-m">Match</th><th class="th-h">Home</th><th class="th-s">Race To ${raceTo}</th><th class="th-a">Away</th></tr></thead>`;
-
   const roundBlocks = rounds.map((round, ri) => {
     const label = roundLabels[ri];
-    const isFinal = ri === rounds.length - 1;
-    const rows = round.map(match => matchRowHtml(match, slots, matchWinners, isFinal)).join('');
-    return `<div class="round-block">
-      <div class="round-lbl${isFinal ? ' r-final' : ''}">${label}</div>
-      <table class="dt">${thead}<tbody>${rows}</tbody></table>
-    </div>`;
+    const rows = round.map(match => matchRowHtml(match, slots, matchWinners)).join('');
+    return `<div class="round-block"><div class="round-lbl">${label}</div><table class="dt">${thead}<tbody>${rows}</tbody></table></div>`;
   }).join('');
-
+  const numPlayers = venue.players.length;
+  const numByes = venue.slots.length - numPlayers;
+  const unit = config.format === 'Pairs' ? 'pairs' : 'players';
   return `<div class="page">
     <div class="ph">
-      <div class="ph-league">Barking &amp; District Pool League</div>
-      <div class="ph-comp">${esc(config.name)}</div>
       <div class="ph-venue">${esc(name)}</div>
-      <div class="ph-meta">
-        <span>${esc(config.date)}</span>
-        <span class="ph-badge">Race to ${raceTo} · Best of ${best}</span>
-      </div>
-      <div class="ph-org">Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; ${venue.players.length} ${config.format === 'Pairs' ? 'pairs' : 'players'} &nbsp;·&nbsp; ${venue.slots.length - venue.players.length} bye${venue.slots.length - venue.players.length !== 1 ? 's' : ''}</div>
+      <div class="ph-comp">${esc(config.name)} &nbsp;·&nbsp; ${esc(config.date)} &nbsp;·&nbsp; Race to ${raceTo}</div>
+      <div class="ph-org">Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; ${numPlayers} ${unit} &nbsp;·&nbsp; ${numByes} bye${numByes !== 1 ? 's' : ''}</div>
     </div>
     ${roundBlocks}
     <div class="pf">
@@ -646,91 +629,91 @@ function sheetHtml(venue) {
   </div>`;
 }
 
-function matchRowHtml(match, slots, matchWinners, isFinal) {
-  const sepClass = isFinal ? 'match-end-final' : 'match-end';
+function matchRowHtml(match, slots, matchWinners) {
   const home = resolveParticipant(match.home, slots, matchWinners);
   const away = resolveParticipant(match.away, slots, matchWinners);
-  const isByeMatch = (home && home.isBye) || (away && away.isBye);
-  const knownHome = home && !home.isBye && !home.unknown;
-  const knownAway = away && !away.isBye && !away.unknown;
+  const isBye = (home && home.isBye) || (away && away.isBye);
 
-  if (isByeMatch) {
-    // Show the advancing player and BYE
+  if (isBye) {
     const real = (home && !home.isBye) ? home : away;
-    const homeIsReal = home && !home.isBye;
-    const cells = isPairs
-      ? `<td class="td-h">${homeIsReal ? pairCell(real) : '<span class="n-bye">BYE</span>'}</td>
-         <td class="td-s" rowspan="2" style="vertical-align:middle;color:#2980b9;font-size:10px;">Advances</td>
-         <td class="td-a">${!homeIsReal ? pairCell(real) : '<span class="n-bye">BYE</span>'}</td>`
-      : `<td class="td-h">${homeIsReal ? singleCell(real) : '<span class="n-bye">BYE</span>'}</td>
-         <td class="td-s" style="color:#2980b9;font-size:10px;">Advances</td>
-         <td class="td-a">${!homeIsReal ? singleCell(real) : '<span class="n-bye">BYE</span>'}</td>`;
-
-    if (isPairs) {
-      const real2 = real.players && real.players[1] ? real.players[1] : '';
-      return `<tr>
-        <td class="td-m" rowspan="2">${match.id}</td>
-        ${cells}
-      </tr><tr class="${sepClass}">
-        <td class="td-h" style="color:#aaa;text-align:right;font-size:9px;">${real.team || ''}</td>
-        <td></td>
-        <td></td>
-      </tr>`;
-    } else {
-      return `<tr class="${sepClass}">
-        <td class="td-m">${match.id}</td>
-        ${cells}
-      </tr>`;
-    }
+    return byeMatchRows(match.id, real);
   }
 
-  // Regular match
-  const scoreCell = `<td class="td-s" rowspan="${isPairs ? 3 : 1}" style="vertical-align:middle;font-size:14px;color:#ccc;">___ &ndash; ___</td>`;
-  const clash = knownHome && knownAway && home.team && away.team && home.team === away.team
-    ? '<span style="background:#f39c12;color:white;font-size:8px;padding:1px 4px;border-radius:2px;margin-left:4px;">SAME TEAM</span>' : '';
+  const knownHome = home && !home.isBye;
+  const knownAway = away && !away.isBye;
+  const clash = knownHome && knownAway && home.team && away.team && home.team === away.team;
+  const clashTag = clash ? `<span style="background:#f39c12;color:white;font-size:8px;padding:1px 4px;border-radius:2px;margin-left:4px;">SAME TEAM</span>` : '';
 
   if (isPairs) {
-    const hp = home ? (home.players || [home.name, '']) : null;
-    const ap = away ? (away.players || [away.name, '']) : null;
-    const hLine1 = knownHome ? `<span class="n-known">${esc(hp[0])}</span>` : `<span class="n-ph">${placeholderText(match.home)}</span>`;
-    const hLine2 = knownHome ? `<span class="n-known">${esc(hp[1] || '')}</span>` : `<span class="n-blank"></span>`;
-    const aLine1 = knownAway ? `<span class="n-known">${esc(ap[0])}${clash}</span>` : `<span class="n-ph">${placeholderText(match.away)}</span>`;
-    const aLine2 = knownAway ? `<span class="n-known">${esc(ap[1] || '')}</span>` : `<span class="n-blank"></span>`;
-    const hTeam = knownHome ? `<span class="n-team">${esc(home.team || '')}</span>` : '';
-    const aTeam = knownAway ? `<span class="n-team">${esc(away.team || '')}</span>` : '';
+    const hp = knownHome ? (home.players || [home.name, '']) : null;
+    const ap = knownAway ? (away.players || [away.name, '']) : null;
+    const ht = knownHome ? home.team || '' : '';
+    const at = knownAway ? away.team || '' : '';
+
+    const hTop = knownHome
+      ? `<span class="n-known">${esc(hp[0])}</span>`
+      : `<span class="n-ph">${placeholderText(match.home)}</span>`;
+    const hBot = knownHome
+      ? `<span class="n-known">${esc(hp[1] || '')}</span>`
+      : `<span class="n-blank"></span>`;
+    const aTop = knownAway
+      ? `<span class="n-known">${esc(ap[0])}${clashTag}</span>`
+      : `<span class="n-ph">${placeholderText(match.away)}</span>`;
+    const aBot = knownAway
+      ? `<span class="n-known">${esc(ap[1] || '')}</span>`
+      : `<span class="n-blank"></span>`;
+
     return `<tr>
       <td class="td-m" rowspan="3">${match.id}</td>
-      <td class="td-h">${hLine1}</td>
-      ${scoreCell}
-      <td class="td-a">${aLine1}</td>
+      <td class="td-h"><span class="nc nc-top">${hTop}</span></td>
+      <td class="td-s" rowspan="3"><div class="sc-inner">___ &ndash; ___</div></td>
+      <td class="td-a"><span class="nc nc-top">${aTop}</span></td>
     </tr><tr>
-      <td class="td-h">${hLine2}</td>
-      <td class="td-a">${aLine2}</td>
-    </tr><tr class="${sepClass}">
-      <td class="td-h" style="text-align:right;">${hTeam}</td>
-      <td class="td-a">${aTeam}</td>
+      <td class="td-h"><span class="nc nc-top">${hBot}</span></td>
+      <td class="td-a"><span class="nc nc-top">${aBot}</span></td>
+    </tr><tr>
+      <td class="td-h"><span class="nc" style="font-size:9px;color:#999;">${esc(ht)}</span></td>
+      <td class="td-a"><span class="nc" style="font-size:9px;color:#999;">${esc(at)}</span></td>
     </tr>`;
   } else {
-    const hLine = knownHome ? `<span class="n-known">${esc(home.name)}${clash}</span><span class="n-team">${esc(home.team || '')}</span>` : `<span class="n-ph">${placeholderText(match.home)}</span><span class="n-blank"></span>`;
-    const aLine = knownAway ? `<span class="n-known">${esc(away.name)}</span><span class="n-team">${esc(away.team || '')}</span>` : `<span class="n-ph">${placeholderText(match.away)}</span><span class="n-blank"></span>`;
-    return `<tr class="${sepClass}">
+    const hLine = knownHome
+      ? `<span class="n-known">${esc(home.name || home.players[0])}${clashTag}</span><div class="n-team">${esc(home.team || '')}</div>`
+      : `<span class="n-ph">${placeholderText(match.home)}</span><span class="n-blank"></span>`;
+    const aLine = knownAway
+      ? `<span class="n-known">${esc(away.name || away.players[0])}</span><div class="n-team">${esc(away.team || '')}</div>`
+      : `<span class="n-ph">${placeholderText(match.away)}</span><span class="n-blank"></span>`;
+    return `<tr>
       <td class="td-m">${match.id}</td>
-      <td class="td-h">${hLine}</td>
-      ${scoreCell}
-      <td class="td-a">${aLine}</td>
+      <td class="td-h"><span class="nc">${hLine}</span></td>
+      <td class="td-s"><div class="sc-inner">___ &ndash; ___</div></td>
+      <td class="td-a"><span class="nc">${aLine}</span></td>
     </tr>`;
   }
 }
 
-function pairCell(p) {
-  if (!p || p.isBye) return '<span class="n-bye">BYE</span>';
-  const players = p.players || [p.name, ''];
-  return `<span class="n-known">${esc(players[0])}</span>`;
-}
-
-function singleCell(p) {
-  if (!p || p.isBye) return '<span class="n-bye">BYE</span>';
-  return `<span class="n-known">${esc(p.name || p.players[0])}</span>`;
+function byeMatchRows(matchId, real) {
+  if (isPairs) {
+    const players = real.players || [real.name, ''];
+    return `<tr>
+      <td class="td-m" rowspan="3">${matchId}</td>
+      <td class="td-h"><span class="nc nc-top"><span class="n-known">${esc(players[0])}</span></span></td>
+      <td class="td-s" rowspan="3"><div class="sc-inner">2 &ndash; 0</div></td>
+      <td class="td-a"><span class="nc nc-top"><span class="n-bye">Bye</span></span></td>
+    </tr><tr>
+      <td class="td-h"><span class="nc nc-top"><span class="n-known">${esc(players[1] || '')}</span></span></td>
+      <td class="td-a"><span class="nc nc-top"></span></td>
+    </tr><tr>
+      <td class="td-h"><span class="nc" style="font-size:9px;color:#999;">${esc(real.team || '')}</span></td>
+      <td class="td-a"></td>
+    </tr>`;
+  } else {
+    return `<tr>
+      <td class="td-m">${matchId}</td>
+      <td class="td-h"><span class="nc"><span class="n-known">${esc(real.name || real.players[0])}</span><div class="n-team">${esc(real.team || '')}</div></span></td>
+      <td class="td-s"><div class="sc-inner">2 &ndash; 0</div></td>
+      <td class="td-a"><span class="nc"><span class="n-bye">Bye</span></span></td>
+    </tr>`;
+  }
 }
 
 function placeholderText(ref) {
@@ -742,10 +725,10 @@ function getRoundLabels(totalRounds) {
   const labels = [];
   for (let i = 0; i < totalRounds; i++) {
     const fromEnd = totalRounds - 1 - i;
-    if (fromEnd === 0) labels.push('Venue Final');
-    else if (fromEnd === 1) labels.push('Semi-Finals');
-    else if (fromEnd === 2) labels.push('Quarter-Finals');
-    else labels.push(`Round ${i + 1}`);
+    if (fromEnd === 0) labels.push('Final');
+    else if (fromEnd === 1) labels.push('Semi Finals');
+    else if (fromEnd === 2) labels.push('Quarter Finals');
+    else labels.push('Round ' + (i + 1));
   }
   return labels;
 }
