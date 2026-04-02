@@ -120,14 +120,15 @@ td.tds{width:82px;text-align:center;vertical-align:middle;padding:0;}
 
 /* name rows */
 .nr{display:block;padding:8px 14px;min-height:28px;}
-.nr.top{border-bottom:1px solid #ebebeb;}
-.nr.mid{border-bottom:1px solid #ebebeb;}
+
+
 .nr.bot{padding:3px 14px;min-height:0;background:#fafafa;border-top:1px solid #ebebeb;}
 .pn{font-size:13px;font-weight:700;color:#111;}
 .bye{font-size:12px;color:#888;font-style:italic;}
 .wph{font-size:10px;color:#c0392b;font-style:italic;}
-.wbl{display:block;border-bottom:1px solid #bbb;min-height:18px;margin:4px 0 2px;}
-.wlbl{font-size:9px;color:#c0392b;font-style:italic;display:block;text-align:center;padding:3px 8px;min-height:18px;border-bottom:1px solid #e8e8e8;background:#fff8f8;}
+.wbl{display:block;min-height:18px;margin:4px 0 2px;}
+.wlbl{font-size:9px;color:#c0392b;font-style:italic;display:block;text-align:center;padding:3px 8px;min-height:18px;background:#fff8f8;}
+.wlbl-empty{display:block;padding:3px 8px;min-height:18px;background:transparent;}
 
 /* score */
 .sc{
@@ -147,6 +148,7 @@ td.tds{width:82px;text-align:center;vertical-align:middle;padding:0;}
 
 /* PRINT */
 @media print{
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
   .screen{display:none!important;}
   body{background:white;}
   .sa{margin:0;padding:0;}
@@ -545,9 +547,9 @@ function liveRows(m,h,a){
       const a2=ka?`<span class="pn">${esc(ap[1]||'')}</span>`:`<span class="wbl"></span>`;
       return`<tr>
         <td class="tdm" rowspan="3">${m.id}</td>
-        <td class="tdh"><span class="nr wlbl">${hLabel}</span></td>
+        <td class="tdh"><span class="${hLabel?'nr wlbl':'nr wlbl-empty'}">${hLabel}</span></td>
         <td class="tds" rowspan="3"><div class="sc"></div></td>
-        <td class="tda"><span class="nr wlbl">${aLabel}</span></td>
+        <td class="tda"><span class="${aLabel?'nr wlbl':'nr wlbl-empty'}">${aLabel}</span></td>
       </tr><tr>
         <td class="tdh"><span class="nr top">${h1}</span></td>
         <td class="tda"><span class="nr top">${a1}</span></td>
@@ -580,9 +582,9 @@ function liveRows(m,h,a){
       const aName=ka?`<span class="pn">${esc(a.name||a.players[0])}</span>`:`<span class="wbl"></span>`;
       return`<tr>
         <td class="tdm" rowspan="2">${m.id}</td>
-        <td class="tdh"><span class="nr wlbl">${hLabel}</span></td>
+        <td class="tdh"><span class="${hLabel?'nr wlbl':'nr wlbl-empty'}">${hLabel}</span></td>
         <td class="tds" rowspan="2"><div class="sc"></div></td>
-        <td class="tda"><span class="nr wlbl">${aLabel}</span></td>
+        <td class="tda"><span class="${aLabel?'nr wlbl':'nr wlbl-empty'}">${aLabel}</span></td>
       </tr><tr>
         <td class="tdh"><span class="nr">${hName}</span></td>
         <td class="tda"><span class="nr">${aName}</span></td>
