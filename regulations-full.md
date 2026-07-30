@@ -173,6 +173,17 @@ The League season runs from **February to November** each year.
 - Equivalent to winning 8-2 (8 frames won, 2 lost = +6 difference)
 - Non-attending team still receives full -10 penalty
 
+### Advance Cancellations (Match Cancelled Before Attendance)
+
+Where a match is cancelled by the opposing team before the attending team has travelled to the venue (including cancellations with less than 24 hours notice, which do not qualify for rescheduling under Section 4.6):
+
+- The attending team's captain must still complete and submit a match card as set out above
+- The card must list all players who would have been available to play that evening, allocated to frame positions (S1–S8, P1–P2) as if the match had been played
+- As no official BDPL scorecard may be accessible, the card may be submitted on paper or in any equivalent clear, legible written format without penalty — the £10 fine for failure to provide an official scorecard does not apply to either team's captain in this circumstance, though the cancelling team remains liable for the standard cancellation penalties
+- The standard submission deadline (15:00 the day following the scheduled match) and late-submission fines apply
+- Player of the Year points are awarded per the standard walkover rules
+- The Committee reserves the right to query the availability of listed players where the number listed appears inconsistent with the team's normal match-night attendance (see Section 4.10, Spirit of the Game)
+
 ### Tiebreakers (Applied in Order)
 1. **Frame Difference** (frames won minus frames lost)
 2. **Playoff Match** if still level after frame difference
