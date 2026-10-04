@@ -146,6 +146,17 @@ td.tds{width:82px;text-align:center;vertical-align:middle;padding:0;}
 /* footer */
 .pf{margin-top:14px;border-top:1px solid #ddd;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#999;}
 
+/* help */
+.help{font-size:13px;line-height:1.55;color:#333;}
+.help h3{font-size:13px;color:#0d2b45;margin:16px 0 6px;}
+.help h3:first-child{margin-top:0;}
+.help ol,.help ul{padding-left:20px;}
+.help li{margin-bottom:4px;}
+.help code{background:#f0f2f8;padding:1px 5px;border-radius:3px;font-size:12px;}
+.help table{border-collapse:collapse;width:100%;font-size:12px;margin:4px 0 8px;}
+.help th,.help td{border:1px solid #e0e0e0;padding:5px 8px;text-align:left;vertical-align:top;}
+.help th{background:#f0f2f8;color:#0d2b45;}
+
 /* PRINT */
 @media print{
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
@@ -224,6 +235,52 @@ td.tds{width:82px;text-align:center;vertical-align:middle;padding:0;}
 <!-- SHEETS -->
 <div id="sh" class="sa" style="display:none;"></div>
 
+<!-- INSTRUCTIONS -->
+<div class="app screen">
+  <div class="card">
+    <div class="ch"><div class="sn">?</div><h2>How to Use</h2></div>
+    <div class="cb help">
+      <h3>Quick steps</h3>
+      <ol>
+        <li>Export the entries from the registration tracker as a CSV (Google Sheets: <em>File → Download → Comma-separated values</em>) or save as XLSX. Only the first sheet of an XLSX is read.</li>
+        <li><strong>Load Entries:</strong> drag the file onto the upload box (or click it). Check the preview shows the right number of entrants, format, venues and draw size.</li>
+        <li><strong>Competition Settings:</strong> enter the competition name, race-to and date, then click <em>Confirm &amp; Proceed</em>.</li>
+        <li><strong>Generate Draw:</strong> click <em>Generate Draw</em>. Check that "Same-team R1 matchups" is 0 ✅. If not, click <em>Redraw</em> until it is.</li>
+        <li>Click <em>Lock Draw</em>, then <em>Print All Sheets</em>. Each venue prints on its own A4 page. Choose "Save as PDF" in the print dialog to keep a copy. Make sure background graphics are turned on.</li>
+      </ol>
+
+      <h3>File columns</h3>
+      <p>The headings must be on the first row. Upper or lower case doesn't matter, and extra columns are ignored. Download <a href="entries-template.csv">entries-template.csv</a> for an example.</p>
+      <table>
+        <tr><th>Column</th><th>What to put in it</th></tr>
+        <tr><td><code>Description</code></td><td><strong>Required.</strong> Player name, or for pairs <code>Name &amp; Name</code>. If any entry contains " &amp; ", the whole competition is treated as Pairs.</td></tr>
+        <tr><td><code>Team</code></td><td>The player's league team. Used to keep team-mates apart in round 1 and, where possible, at the same venue.</td></tr>
+        <tr><td><code>Organiser</code></td><td><code>TRUE</code> for the one entrant running each venue (their name is printed on that venue's sheet). Leave blank for everyone else.</td></tr>
+        <tr><td><code>Venue</code></td><td>For an organiser: the venue they run. For anyone else: fills in a venue to <em>seed</em> them there (fix them to it). Leave blank to place them at random.</td></tr>
+        <tr><td><code>Entered Date</code>, <code>Payment Status</code></td><td>Not used by the generator. <strong>Unpaid entrants are still included</strong>, so delete those rows first if they shouldn't be in the draw.</td></tr>
+      </table>
+
+      <h3>How venues are worked out</h3>
+      <ul>
+        <li><strong>Multi-venue event:</strong> mark one organiser per venue. You get one bracket per organiser venue. Unseeded entrants are spread evenly across them, avoiding team-mates where possible.</li>
+        <li><strong>No organisers marked:</strong> each different value in the Venue column becomes a venue.</li>
+        <li><strong>No organisers and no venues:</strong> everyone goes into a single "Main Draw".</li>
+        <li><strong>Draw size:</strong> every venue uses the same bracket size, the next power of 2 (8, 16, 32, 64…) that fits the biggest venue. Empty places become byes.</li>
+      </ul>
+
+      <h3>Loading from the repo</h3>
+      <p>Instead of uploading, you can commit the CSV to the <code>draw/</code> folder of the GitHub repo. Then type its path (e.g. <code>competitions/henry-thorpe-2026.csv</code>) or a full URL into the box and click <em>Load</em>.</p>
+
+      <h3>Troubleshooting</h3>
+      <ul>
+        <li><strong>"Missing required column: Description":</strong> the heading row is missing or misspelt, or there are blank rows above it.</li>
+        <li><strong>Venue count or draw size looks wrong in the preview:</strong> check the Organiser and Venue columns. Typos in a venue name create an extra venue, e.g. "Keith Davis" vs "Keith Davies".</li>
+        <li><strong>Print has no colours:</strong> tick "Background graphics" in the print dialog's settings.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
@@ -271,9 +328,8 @@ function processRows(rows){
 }
 
 function showPreview(){
-  const orgs=ents.filter(e=>e.organiser);
-  const venues=[...new Set(orgs.map(e=>e.venue))];
-  const bs=nextP2(ents.length/Math.max(venues.length,1))*venues.length;
+  const venues=getVenues();
+  const bs=nextP2(ents.length/venues.length)*venues.length;
   document.getElementById('us').innerHTML=`<span>Entrants: <strong>${ents.length}</strong></span><span>Format: <strong>${isPairs?'Pairs':'Singles'}</strong></span><span>Venues: <strong>${venues.length}</strong></span><span>Draw size: <strong>${bs}</strong> (${bs-ents.length} byes)</span>`;
   document.getElementById('pb').innerHTML=ents.map(e=>`<tr style="border-bottom:1px solid #eee;"><td style="padding:4px 8px;">${e.name}</td><td style="padding:4px 8px;">${e.team}</td><td style="padding:4px 8px;text-align:center;">${e.organiser?'✅':''}</td><td style="padding:4px 8px;">${e.venue||''}</td></tr>`).join('');
   document.getElementById('up').style.display='block';
@@ -283,11 +339,11 @@ function populateCfg(){
   const d=new Date();d.setDate(d.getDate()+7);
   document.getElementById('cd').value=d.toISOString().split('T')[0];
   const orgs=ents.filter(e=>e.organiser);
-  const venues=[...new Set(orgs.map(e=>e.venue))].sort();
+  const venues=getVenues();
   document.getElementById('vg').innerHTML=venues.map(v=>{
     const org=orgs.find(e=>e.venue===v);
     const seeded=ents.filter(e=>!e.organiser&&e.venue===v);
-    return`<div class="vc"><div class="vn">${v}</div><div class="vo">Org: ${org?org.name:'?'}</div>${seeded.length?`<div style="font-size:10px;color:#888;margin-top:2px;">${seeded.length} seeded</div>`:''}</div>`;
+    return`<div class="vc"><div class="vn">${v}</div><div class="vo">Org: ${org?org.name:'(none)'}</div>${seeded.length?`<div style="font-size:10px;color:#888;margin-top:2px;">${seeded.length} seeded</div>`:''}</div>`;
   }).join('');
   document.getElementById('cs').innerHTML=`<span>Venues: <strong>${venues.length}</strong></span><span>Seeded: <strong>${ents.filter(e=>e.venue).length}</strong></span><span>Random pool: <strong>${ents.filter(e=>!e.venue).length}</strong></span>`;
   document.getElementById('vs').style.display='block';
@@ -308,25 +364,31 @@ function fmtDate(iso){
 }
 
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function getVenues(){
+  const orgs=ents.filter(e=>e.organiser);
+  let v=[...new Set(orgs.map(e=>e.venue))];
+  if(!v.length)v=[...new Set(ents.map(e=>e.venue).filter(Boolean))];
+  if(!v.length)v=['Main Draw'];
+  return v.sort();
+}
 function nextP2(n){n=Math.ceil(n);let p=1;while(p<n)p*=2;return p;}
 
 function genDraw(){
   locked=false;
   const orgs=ents.filter(e=>e.organiser);
-  const venues=[...new Set(orgs.map(e=>e.venue))].sort();
+  const venues=getVenues();
   const nv=venues.length;
   const base=Math.floor(ents.length/nv), extra=ents.length%nv;
-  const maxPV=base+(extra>0?1:0);
-  const bracket=nextP2(maxPV);
   const vm={};
   venues.forEach((v,i)=>{
     const org=orgs.find(e=>e.venue===v);
-    vm[v]={name:v,org:org?org.name:'',players:org?[{...org}]:[],cap:i<extra?base+1:base,bracket};
+    vm[v]={name:v,org:org?org.name:'',players:org?[{...org}]:[],cap:i<extra?base+1:base};
   });
-  ents.filter(e=>!e.organiser&&e.venue).forEach(p=>{
-    if(vm[p.venue]){vm[p.venue].players.push({...p});vm[p.venue].cap--;}
+  const isOrg=e=>e.organiser&&vm[e.venue]&&vm[e.venue].org===e.name;
+  ents.filter(e=>!isOrg(e)&&e.venue&&vm[e.venue]).forEach(p=>{
+    vm[p.venue].players.push({...p});vm[p.venue].cap--;
   });
-  const pool=shuffle(ents.filter(e=>!e.organiser&&!e.venue));
+  const pool=shuffle(ents.filter(e=>!isOrg(e)&&!(e.venue&&vm[e.venue])));
   for(const p of pool){
     const avail=venues.filter(v=>vm[v].cap>0);
     let best=null,bs=-Infinity;
@@ -335,8 +397,11 @@ function genDraw(){
       const sc=-clash*1000+vm[v].cap+Math.random()*.5;
       if(sc>bs){bs=sc;best=v;}
     }
-    if(best){vm[best].players.push({...p});vm[best].cap--;}
+    if(!best)best=venues.reduce((a,v)=>vm[v].players.length<vm[a].players.length?v:a,venues[0]);
+    vm[best].players.push({...p});vm[best].cap--;
   }
+  const bracket=nextP2(Math.max(...venues.map(v=>vm[v].players.length)));
+  venues.forEach(v=>vm[v].bracket=bracket);
   draw=venues.map(v=>buildBracket(vm[v]));
   renderDraw();
   renderStats();
@@ -482,7 +547,7 @@ function sheetHtml(v){
       <div class="cn">${esc(cfg.name)}</div>
       <div class="vn">${esc(name)}</div>
       <div class="dm">${esc(cfg.date)}<span class="bdg">Race to ${rt} · Best of ${best}</span></div>
-      <div class="og">Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; ${np} ${unit} &nbsp;·&nbsp; ${nb} bye${nb!==1?'s':''}</div>
+      <div class="og">${org?`Organiser: <strong>${esc(org)}</strong> &nbsp;·&nbsp; `:''}${np} ${unit} &nbsp;·&nbsp; ${nb} bye${nb!==1?'s':''}</div>
       <hr class="ph-rule">
     </div>
     ${blocks}
